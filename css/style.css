@@ -58,7 +58,6 @@ a {
     width: 3rem;
     height: 3rem;
     padding: 1rem;
-    border: 1px solid white;
 }
 
 .menu-container label:hover {
@@ -72,7 +71,6 @@ a {
     width: 100%;
     margin-left: -100%;
     padding-top: 1rem;
-    padding-bottom: 2rem;
 }
 
 .nav-menu ul {
@@ -84,8 +82,19 @@ a {
     padding: 0;
 }
 
+.nav-menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: .1rem solid #404040;
+}
+
+.nav-menu .home {
+    border-top: .1rem solid #404040;
+    
+}
+
 .nav-menu li a {
     margin: 0 auto;
     display: block;
-    margin: 1.5rem;
+    padding: 1.5rem;
 }
