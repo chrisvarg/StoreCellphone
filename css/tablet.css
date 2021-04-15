@@ -1,0 +1,61 @@
+.site-header {
+    margin: 0;
+}
+
+.header-container {
+    padding: 0;
+    height: 5.6rem;
+    margin: 4.5rem 5.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 11px;
+    width: 6.7rem;
+    height: 5.6rem;
+}
+
+.logo img {
+    height: 100%;
+}
+
+
+/* retirar el menu burguer */
+
+.menu-container {
+    padding: 0;
+}
+
+#btn-nav,
+.menu-container label {
+    display: none;
+}
+
+/* retirar el menu burguer */
+.nav-menu {
+    position: static;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-menu ul li,
+.home {
+    border: none;
+    width: 72px;
+}
+
+.nav-menu li a {
+    padding: 0;
+    padding-right: .8rem;
+    text-align: center;
+}
+.about {
+}
+

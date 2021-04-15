@@ -23,10 +23,18 @@ a {
     font-size: 1.6rem;
 }
 
+.header-container {
+    padding-top: 2rem;
+}
+
+.logo-container {
+    margin-bottom: 1.2rem;
+}
+
 .logo {
     margin: 0 auto;
-    padding: 2rem 0;
     width: 8rem;
+    height: 6.7rem;
 }
 
 .logo img{
@@ -44,7 +52,7 @@ a {
 }
 
 .menu-container {
-    padding-bottom: 2rem ;
+    padding-bottom: 1.2rem ;
 }
 
 .menu-container img {
@@ -86,9 +94,10 @@ a {
     width: 100%;
     text-align: center;
     border-bottom: .1rem solid #404040;
+    height: 100%;
 }
 
-.nav-menu .home {
+.nav-menu__items .home {
     border-top: .1rem solid #404040;
     
 }
@@ -97,4 +106,5 @@ a {
     margin: 0 auto;
     display: block;
     padding: 1.5rem;
+    height: 100%;
 }
