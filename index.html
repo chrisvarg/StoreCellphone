@@ -9,30 +9,37 @@
         <title>Document</title>
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/tablet.css" media="screen and (min-width:600px)">
+        <link rel="stylesheet" href="./css/desktop.css" media="screen and (min-width:800px)">
     </head>
     <body>
         <header class="site-header">
             <div class="header-container">
-                <div class="logo-container">
-                    <a href="index.html">
-                        <figure class="logo">
-                            <img src="./assets/img/Logo.png" alt="">
-                        </figure>
-                    </a>
-                </div>
-                <div class="menu-container">
-                    <input type="checkbox" id="btn-nav">
-                    <label for="btn-nav">
-                        <img src="./assets/img/menu.svg" alt="">
-                    </label>
-                    <nav class="nav-menu">
-                        <ul>
-                            <li class="nav-menu_items home"><a href="">Home</a></li>
-                            <li class="nav-menu_items"><a href="">Store</a></li>
-                            <li class="nav-menu_items about"><a href="">About us</a></li>
-                            <li class="nav-menu_items"><a href="">Contact</a></li>
-                        </ul>
-                    </nav>
+                <div class="header-menu">
+                    <div class="logo-container">
+                        <a href="index.html">
+                            <figure class="logo">
+                                <img src="./assets/img/Logo.png" alt="">
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="menu-container">
+                        <input type="checkbox" id="btn-nav">
+                        <label for="btn-nav">
+                            <img src="./assets/img/menu.svg" alt="">
+                        </label>
+                        <nav class="nav-menu">
+                            <ul>
+                                <li class="nav-menu_items home"><a href="">Home</a></li>
+                                <li class="nav-menu_items"><a href="">Store</a></li>
+                                <li class="nav-menu_items about"><a href="">About us</a></li>
+                                <li class="nav-menu_items"><a href="">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="sessions sessions-header">
+                        <input class="btn btn-session login" type="button" value="Sign in">
+                        <input class="btn btn-session registre" type="button" value="Sign up">
+                    </div>
                 </div>
             </div>
         </header>
