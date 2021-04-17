@@ -25,16 +25,14 @@
     text-align: center;
 }
 
-.logo-container {
-    width: 6.7rem;
-    right: 5.6rem;
-    margin: 0;
-    /* margin-right: 1rem; */
-}
-
-.logo {
+.logo{
     width: 6.7rem;
     height: 5.6rem;
+    margin: 0;
+    margin-right: 6rem;
+    
+    /* width: 7.5rem;
+    max-height: 6.2; */
 }
 
 /* retirar el menu burguer */
@@ -50,6 +48,7 @@
 
 /* retirar el menu burguer */
 .nav-menu {
+    width: 100%;
     position: static;
     margin: 0 auto;
     padding: 0;
@@ -57,7 +56,7 @@
 }
 
 .nav-menu ul {
-    margin-left: 1rem;
+    margin-left: 1.2rem;
     flex-direction: row;
     justify-content: center;
     align-self: center;
@@ -73,12 +72,12 @@
 .nav-menu li a {
     padding: 0;
     padding-top: 10px;
-    font-size: 1.4rem;
     height: 4rem;
 }
 
 .about a {
     width: 72px;
+    margin-right: 1.5rem;
 }
 
 .nav-menu li a:hover {
@@ -92,14 +91,19 @@
     justify-content: space-evenly;
     margin: 0;
     padding: 0;
-    padding-left: 1.2rem;
+    margin-left: 3.2rem;
 }
 
 .btn-session {
     width: 7.1rem;
     height: 2.8rem;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: bold;
+}
+
+.btn-session:hover {
+    cursor: pointer;
+    background-color: #222222;
 }
 
 .login {

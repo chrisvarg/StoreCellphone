@@ -110,16 +110,16 @@ p {
     height: 100%;
 }
 
-.nav-menu__items .home {
-    border-top: .1rem solid #404040;
-    
-}
-
 .nav-menu li a {
     margin: 0 auto;
     display: block;
     padding: 1.5rem;
     height: 100%;
+    font-weight: bold;
+}
+
+.nav-menu__items .home {
+    border-top: .1rem solid #404040; 
 }
 
 .nav-menu li a:hover {
