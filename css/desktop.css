@@ -1,0 +1,12 @@
+.site-header,
+.site-content {
+    width: 80%;
+    margin: 0 auto;
+    min-width: 100rem;
+
+}
+
+.cover-site {
+    width: 80%;
+}
+

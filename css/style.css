@@ -131,18 +131,19 @@ p {
 
     /* portada cell */
 
+.site-content {
+    margin: 0 auto;
+}
+
 .cover-site {
+    background-image: url("/assets/img/portadaWeb.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 28.6rem;
     min-height: 28.6rem;
     width: 100%;
     background-color: #404040;
-    background-image: url("/assets/img/portada.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-.cover-text {
     padding: 2rem 3.6rem;
     margin-bottom: 2rem;
 }
@@ -153,7 +154,7 @@ p {
 }
 
 .cover-text__parrafo {
-    margin: 1.2rem 1.7rem 5rem;
+    margin: 1.2rem 1.7rem 0;
 }
 
     /* MARCAS */
@@ -161,23 +162,28 @@ p {
 .marks-site {
     margin-top: 2rem;
     width: 100%;
-    height: 24.7rem;
+    min-width: 37.5rem;
+    height: 100%;
     min-height: 24.7rem;
+    display: flex;
+    justify-content: space-between;
     background-color: #404040;
 }
 
 .marks-container {
     padding: 2rem 0rem;
-    margin: 0rem 5.7rem;
+    margin: 4rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-content: center;
 }
 
 .marks-container__items {
-    width: 8.7rem;
-    height: 8.7rem;
+    max-width: 8.7rem;
+    min-width: 8.7rem;
+    max-height: 8.7rem;
+    margin: 2rem;
 }
 
 .marks-container__items img {
@@ -186,8 +192,7 @@ p {
 }
 
 .apple {
-    margin-bottom: 3.3rem;
-    margin-right: 3.3rem;
+    /* margin-bottom: 3.3rem; */
 }
 
     /* PRODUCTS */
