@@ -303,14 +303,17 @@ p {
 }
 
 .logo-footer {
-    padding: 1rem 1rem .5rem; /*arriba, derecha-izquierda, abajo*/
+    /* padding: 1rem 1rem .5rem; arriba, derecha-izquierda, abajo */
+    margin: 0 auto;
+    margin-top: 1rem;
     width: 5rem;
+    height: 4.2rem;
 }
 
 .text-copyright {
     text-align: center;
     font-size: 1.2rem;
-    padding: 1.5rem;
+    padding: 0.5rem;
     height: 100%;
 }
 
