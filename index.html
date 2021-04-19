@@ -55,19 +55,29 @@
                 <div class="marks-container">
                     <figure class="marks-container__items apple">
                         <!-- tamaños de las imagenes segun la resolución de pantalla -->
-                        <img srcset="./assets/img/apple.png 600w,
-                                     ./assets/img/apple@2x.png 1000w,
-                                     ./assets/img/apple@3x.png 1200w"
+                        <img srcset="./assets/img/apple.png 200w,
+                                     ./assets/img/apple@2x.png 600w,
+                                     ./assets/img/apple@3x.png 800w"
+                             sizes="(min-width:375px) 375w"
                              src="./assets/img/apple.png" alt="">
                      </figure>
                     <figure class="marks-container__items">
-                        <img src="./assets/img/galaxy.svg" alt="">
+                        <img srcset="./assets/img/galaxy.png 200w,
+                                     ./assets/img/galaxy@2x.png 600w,
+                                     ./assets/img/galaxy@3x.png 800w"
+                             src="./assets/img/galaxy.png" alt="">
                      </figure>
                     <figure class="marks-container__items xiaomi">
-                        <img src="./assets/img/xiaomi.png" alt="">
+                        <img srcset="./assets/img/xiaomi.png 200w,
+                                     ./assets/img/xiaomi@2x.png 600w,
+                                     ./assets/img/xiaomi@3x.png 800w"
+                             src="./assets/img/xiaomi.png" alt="">
                      </figure>
                     <figure class="marks-container__items">
-                        <img src="./assets/img/huawei.svg" alt="">
+                        <img srcset="./assets/img/huawei.png 200w,
+                                     ./assets/img/huawei@2x.png 600w,
+                                     ./assets/img/huawei@3x.png 800w"
+                             src="./assets/img/huawei.svg" alt="">
                      </figure>
                 </div>
             </div>
@@ -79,7 +89,7 @@
                             <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
                         </figure>
                         <p class="products-price">$3.746.960</p>
-                        <input class="btn" type="button" value="Buy Now">
+                        <input class="btn btn-buy" type="button" value="Buy Now">
                     </div>
                     <div class="products">
                         <p class="products-name">iPhone 12 Mini 64GB 4G</p>
@@ -87,18 +97,7 @@
                             <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
                         </figure>
                         <p class="products-price">$3.746.960</p>
-                        <input class="btn" type="button" value="Buy Now">
-                    </div>
-                </div>
-                <!-- MIRAR COMO USAR EL DISPLAY GRclass PARA LOS PRODUCTOS -->
-                <div class="products-container products-two">
-                    <div class="products">
-                        <p class="products-name">iPhone 12 Mini 64GB 4G</p>
-                        <figure class="products-photo">
-                            <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
-                        </figure>
-                        <p class="products-price">$3.746.960</p>
-                        <input class="btn" type="button" value="Buy Now">
+                        <input class="btn btn-buy"  type="button" value="Buy Now">
                     </div>
                     <div class="products">
                         <p class="products-name">iPhone 12 Mini 64GB 4G</p>
@@ -106,8 +105,18 @@
                             <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
                         </figure>
                         <p class="products-price">$3.746.960</p>
-                        <input class="btn" type="button" value="Buy Now">
+                        <input class="btn btn-buy" type="button" value="Buy Now">
                     </div>
+
+                    <div class="products">
+                        <p class="products-name">iPhone 12 Mini 64GB 4G</p>
+                        <figure class="products-photo">
+                            <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
+                        </figure>
+                        <p class="products-price">$3.746.960</p>
+                        <input class="btn btn-buy" type="button" value="Buy Now">
+                    </div>
+
                 </div>
             </div>
         </main>
