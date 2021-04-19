@@ -36,7 +36,6 @@
     margin-right: 6rem;
 }
 
-
 /* retirar el menu burguer */
 .menu-container {
     padding: 0;
@@ -203,7 +202,7 @@ subir el contenido a la región del header */
         width: 100%;
     }
     .site-content {
-        width: 80%;
+        /* width: 80%; */
         margin: 0 auto;
         min-width: 100rem;
     }
