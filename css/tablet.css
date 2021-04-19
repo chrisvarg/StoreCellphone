@@ -161,7 +161,7 @@ subir el contenido a la región del header */
 
 .products .products-name {
     font-size: 1.6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     margin-top: 3rem;
 }
 
@@ -204,7 +204,7 @@ subir el contenido a la región del header */
     }
 
     .products-container {
-        max-width: 90%;
+        max-width: 80%;
         margin: 0 auto;
     }
 }
