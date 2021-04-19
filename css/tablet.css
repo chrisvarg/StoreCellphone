@@ -34,13 +34,9 @@
     height: 5.6rem;
     margin: 0;
     margin-right: 6rem;
-    
-    /* width: 7.5rem;
-    max-height: 6.2; */
 }
 
 /* retirar el menu burguer */
-
 .menu-container {
     padding: 0;
 } 
@@ -88,7 +84,6 @@
     background-color:dodgerblue;
 }
 
-
 /* mostrar los botones se las sesiones en tablet */
 .sessions-header {
     display:flex;
@@ -114,11 +109,8 @@
     margin-right: 1.2rem;
 }
 
-
 /* CONTAINT */
-
-
-/* PORTADA */
+    /* PORTADA */
 /* quitar la imagen de la portada mobile, 
 subir el contenido a la región del header */
 .cover-site {
@@ -145,15 +137,74 @@ subir el contenido a la región del header */
 }
 
 .marks-container {
-    width: 100%;
+    width: 90%;
     padding: 0;
-    margin: 0 5.2rem;
+    margin: 0 auto;
+    margin-top: 5.6rem;
+    margin-bottom: 5.6rem;
 }
 
 /* darle tamaños especificos a los contenedores de imagenes */
 .marks-container__items {
-    width: 13rem;
-    min-width: 10rem;
-    min-height: 10rem;
-    margin: 0;
+    min-width: 13rem;
+    min-height: 13rem;
+    margin: 0 auto;
+    margin: 1rem;
+}
+
+    /* PRODUCTS */
+.products {
+    width: 22.4rem;
+    max-width: 57.4rem;
+    height: 46rem;
+}
+
+.products .products-name {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.products-photo {
+    width: 19.2rem;
+    height: 25.8rem;
+}
+
+.products .products-price {
+    /* margin-top: 1rem; */
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+
+}
+
+.btn-buy {
+    width: 14.6rem;
+    height: 4.5rem;
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+}
+
+/* resolution desktop*/
+
+@media (min-width: 1000px) {
+    .site-header,
+    .site-content {
+        width: 80%;
+        margin: 0 auto;
+        min-width: 100rem;
+    }
+
+    .cover-site {
+        width: 80%;
+    }
+
+    .marks-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .products-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
 }
