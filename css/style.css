@@ -50,6 +50,11 @@ p {
     height: 6.7rem;
 }
 
+.logo a {
+    width: 100%;
+    height: 100%;
+}
+
 .logo img{
     width: 100%;
     height: 100%;
@@ -97,10 +102,6 @@ p {
 
 .nav-menu ul {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-menu li {
@@ -111,8 +112,6 @@ p {
 }
 
 .nav-menu li a {
-    margin: 0 auto;
-    display: block;
     padding: 1.5rem;
     height: 100%;
     font-weight: bold;
