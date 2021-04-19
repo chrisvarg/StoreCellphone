@@ -184,6 +184,23 @@ subir el contenido a la región del header */
     font-size: 1.6rem;
 }
 
+/* FOOTER */
+.btn-footer {
+    display: none;
+}
+
+.menu-footer {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+}
+
+.logo-footer {
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+
 /* resolution desktop*/
 
 @media (min-width: 1000px) {
