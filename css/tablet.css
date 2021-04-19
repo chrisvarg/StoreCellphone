@@ -187,15 +187,18 @@ subir el contenido a la región del header */
 /* resolution desktop*/
 
 @media (min-width: 1000px) {
-    .site-header,
+    .site-header {
+        width: 100%;
+    }
     .site-content {
-        width: 80%;
+        /* width: 80%; */
         margin: 0 auto;
         min-width: 100rem;
     }
 
     .cover-site {
         width: 80%;
+        margin: 0 auto;
     }
 
     .marks-container {
