@@ -201,9 +201,31 @@ subir el contenido a la región del header */
 }
 
 .menu-footer {
-    padding-top: 2rem;
+    margin: 0 auto;
+    padding-top: 1rem;
     margin-bottom: 2rem;
     font-size: 1.4rem;
+}
+
+.nav-footer ul {
+    font-size: 1.4rem;
+    margin: 0 auto;
+    width: 40%;
+    justify-content: center;
+}
+
+.about2 {
+    width: 7.8rem;
+}
+
+.about2 a {
+    width: 7.8rem;
+    padding-right: 1rem;
+}
+
+.contact2 {
+    width: 7.8rem;
+    margin-left: 1.8rem;
 }
 
 .logo-footer {

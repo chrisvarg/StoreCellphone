@@ -214,6 +214,10 @@ p {
     min-height: 31.6rem;
 }
 
+.products:hover {
+    box-shadow: 10px 10px 20px .1px black;
+}
+
 /* Temporal mientras repaso display: grid */
 .products .products-name {
     font-size: 1.2rem;
