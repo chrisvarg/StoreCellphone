@@ -215,7 +215,7 @@ p {
 }
 
 .products:hover {
-    box-shadow: 10px 10px 20px .1px black;
+    box-shadow: 1px 1px 20px .1px black;
 }
 
 /* Temporal mientras repaso display: grid */
