@@ -6,43 +6,74 @@
     <meta name="description" content="Login de smarthphone Store">
     <meta name="robot" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="./css/style.css">
-</head>
+    <link rel="stylesheet" href="./css/tablet.css" media="screen and (min-width:600px)"></head>
 <body>
-    <!-- LOGO -->
-    <div class="logo-container">
-        <figure class="logo logo-sign">
-            <img src="./assets/img/Logo.png" alt="">
-        </figure>
-    </div>
-    <!-- TITLE: SING IN -->
-    <div class="text-container">
-        <h1>Sign In</h1>
-    </div>
-    <!-- FORMULARY -->
-    <div class="form-container">
-        <form action="" method="GET">
-            <!-- EMAIL -->
-            <div class="form-items">
-                <label for="email">E-mail</label> <br/>
-                <input type="text" name="email" autofocus="autofocus"> <br/>
+    <header class="site-header">
+        <div class="header-container header-sign">
+            <div class="header-menu">
+                <div class="menu-container menu-sign">
+                    <input type="checkbox" id="btn-nav">
+                    <label for="btn-nav">
+                        <img src="./assets/img/menu.svg" alt="">
+                    </label>
+                    <nav class="nav-menu menu-">
+                        <ul>
+                            <li class="nav-menu_items home"><a href="index.html">Home</a></li>
+                            <li class="nav-menu_items"><a href="">Store</a></li>
+                            <li class="nav-menu_items about"><a href="">About us</a></li>
+                            <li class="nav-menu_items contact"><a href="">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <!-- PASSWORD -->
-            <div class="form-items">
-                <label for="password" >Password</label><br>
-                <input type="text" name="password" autofocus="autofocus" >
+        </div>
+    </header>
+    <main class="site-main">
+        <div class="formulary">
+            <!-- LOGO -->
+            <div class="logo-container">
+                <figure class="logo logo-sign">
+                    <img src="./assets/img/Logo.png" alt="">
+                </figure>
             </div>
-    
-            <!-- BUTTOMS -->
-            <div class="sessions sessions-registre">
-                <input class="btn btn-session signin" type="submit" value="continue">
+            <!-- TITLE: SING IN -->
+            <div class="text-container">
+                <h1>Sign In</h1>
             </div>
+            <!-- FORMULARY -->
+            <div class="form-container">
+                <form action="" method="GET">
+                    <!-- EMAIL -->
+                    <div class="form-items">
+                        <label for="email">E-mail</label> <br/>
+                        <input type="text" name="email" autofocus="autofocus"> <br/>
+                    </div>
+                    <!-- PASSWORD -->
+                    <div class="form-items">
+                        <label for="password" >Password</label><br>
+                        <input type="text" name="password" autofocus="autofocus" >
+                    </div>
             
-        </form>
-        <a href="./signUp.html" class="signup">
-            <input class="btn btn-session" type="submit" value="signup">
-        </a>
-    </div>
+                    <!-- BUTTOMS -->
+                    <div class="sessions sessions-registre">
+                        <input class="btn" id="signin" type="submit" value="Continue">
+                    </div>
+                    
+                </form>
+                <a href="./signUp.html" class="signup">
+                    <input class="btn" type="submit" value="Signup">
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer footer-sign">
+        <div class="copyright-container">
+            <p class="text-copyright">
+                Copyright &copy; | Desarrollado por Christian Vargas
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

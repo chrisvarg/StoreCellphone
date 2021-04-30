@@ -325,9 +325,17 @@ p, label, input {
 
 /* SIGN IN */
 
+.header-container .header-sign {
+    display: none;
+}
+
+.formulary {
+    min-width: 37.5rem;
+}
+
 .logo-sign {
     margin: 0 auto;
-    margin-top: 11rem;
+    margin-top: 9rem;
     width: 17rem;
     height: 14.3rem;
 }
@@ -381,7 +389,7 @@ p, label, input {
 
 .signup {
     text-align: center;
-    margin-top: 2.9rem;
+    margin-top: 0.9rem;
 }
 
 /* SIGN UP */
@@ -407,3 +415,6 @@ p, label, input {
     color: #eeeeee;
 }
 
+.footer-sign {
+    margin-top: 10rem;
+}
