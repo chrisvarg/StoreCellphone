@@ -233,34 +233,6 @@ subir el contenido a la región del header */
     margin-top: 1rem;
 }
 
-/* SIGN IN */
-
-.header-sign {
-    display: block;
-    background-image: none;
-    height: auto;
-}
-
-.menu-sign {
-    margin: 0 auto;
-}
-
-.formulary {
-    margin: 0 auto;
-    width: 49%;
-    max-width: 37.5rem;
-}
-
-.logo-sign {
-    margin: 0 auto;
-    margin-top: 11rem;
-}
-
-.text-container h1 {
-    margin-top: 8rem;
-    margin-bottom: 8rem;
-    text-align: center;
-}
 
 /* resolution desktop*/
 
