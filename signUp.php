@@ -13,7 +13,7 @@
             </div>
             <!-- FORMULARY -->
             <div class="form-container">
-                <form action="registre.php" method="GET">
+                <form action="registre.php" method="POST">
                     <!-- NAME -->
                     <div class="form-items">
                         <label for="nombre">Name</label> <br/>
@@ -42,7 +42,7 @@
                     <!-- PASSWORD -->
                     <div class="form-items">
                         <label for="password" >Password</label><br>
-                        <input type="text" name="password" autofocus="autofocus" >
+                        <input type="password" name="password" autofocus="autofocus" >
                     </div>
                     
                     <div class="sessions sessions-registre">
