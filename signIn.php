@@ -12,6 +12,13 @@
                 <h1>Sign In</h1>
             </div>
             <!-- FORMULARY -->
+            <?php if(isset($_SESSION['user'])):  ?>
+            <div>
+                <?php echo "<p>{$_SESSION['user']['nombre']} {$_SESSION['user']['email']}</p>"; ?>
+                <?php else: ?>
+                    <?php echo "<p>{$_SESSION['user']['nombre']}</p>"; ?>
+            <?php endif; ?>
+            </div>
             <div class="form-container">
                 <form action="login.php" method="POST">
                     <!-- EMAIL -->
