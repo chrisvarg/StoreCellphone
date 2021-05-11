@@ -13,7 +13,7 @@
             </div>
             <!-- FORMULARY -->
             <div class="form-container">
-                <form action="login.php" method="GET">
+                <form action="login.php" method="POST">
                     <!-- EMAIL -->
                     <div class="form-items">
                         <label for="email">E-mail</label> <br/>
@@ -25,12 +25,13 @@
                         <input type="password" name="password" autofocus="autofocus" >
                     </div>
             
-                    <!-- BUTTOMS -->
+                    <!-- BUTTOM CONTINUE -->
                     <div class="sessions sessions-registre">
                         <input class="btn" id="signin" type="submit" value="Continue">
                     </div>
                     
                 </form>
+                <!-- BUTTOM SINGUP -->
                 <a href="./signUp.php" class="signup">
                     <input class="btn" type="submit" value="Sign Up">
                 </a>

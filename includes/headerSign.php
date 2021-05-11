@@ -1,3 +1,4 @@
+<?php require_once('includes/conexion.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="/css/tablet.css" media="screen and (min-width:600px)">
     <!-- CSS - LOGIN TABLET -->
     <link rel="stylesheet" href="/css/signTablet.css">
+
 </head>
 <body>
     <header class="site-header">

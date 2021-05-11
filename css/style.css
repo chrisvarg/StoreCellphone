@@ -326,3 +326,28 @@ p, label, input {
 .sessions-header {
     display:none
 }
+
+/* ALERTS */
+.alert {
+    color: #ff7b72;
+    background-color: #521c18;
+    font-size: 1.4rem;
+    height: 2rem;
+    padding-top: .2rem;
+    padding-left: .5rem;
+    margin-top: .4rem;
+    border-radius: .5rem;
+}
+.alert-errors {
+    /* color: ;
+    background-color:  */
+}
+.alert-complete {
+    color: #2f9646;
+    background-color: #0b1f14;
+    width: 75%;
+    height: 4rem;
+    padding-top: 1.2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}

@@ -17,5 +17,6 @@ $db = dbConexion();
 
 mysqli_query($db, 'SET NAMES utf8');
 
+session_start();
 // echo "<pre>";
 // var_dump($db);
