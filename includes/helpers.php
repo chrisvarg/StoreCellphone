@@ -21,4 +21,9 @@ function eraserErrors()
         $_SESSION['complete'] == null;
         unset($_SESSION['complete']);
     }
+
+    if (isset($_SESSION['error-login'])){
+        $_SESSION['error-login'] = null;
+        unset($_SESSION['error-login']);
+    }
 }

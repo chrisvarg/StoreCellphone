@@ -45,7 +45,9 @@
     background-color: #404040;
 }
 
-.form-items input[type="text"] {
+.form-items input[type="text"],
+.form-items input[type="email"],
+.form-items input[type="password"] {
     padding-left: 8px;
 }
 
@@ -91,6 +93,9 @@
     color: #eeeeee;
 }
 
+.site-footer {
+    height: 2.4rem;
+}
 .footer-container {
     display: none;
 }

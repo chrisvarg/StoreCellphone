@@ -12,13 +12,20 @@
                 <h1>Sign In</h1>
             </div>
             <!-- FORMULARY -->
+            <!-- (tener en cuenta el if para hacer y maquetar la interfaz de los que se logean) -->
+            <div id="login-user">
             <?php if(isset($_SESSION['user'])):  ?>
-            <div>
-                <?php echo "<p>{$_SESSION['user']['nombre']} {$_SESSION['user']['email']}</p>"; ?>
-                <?php else: ?>
-                    <?php echo "<p>{$_SESSION['user']['nombre']}</p>"; ?>
+                <?php echo "<p>{$_SESSION['user']['nombre']} {$_SESSION['user']['apellidos']}</p>"; ?>
+            <?php endif; ?>
+            
+            <!-- error si no hay sessión user -->
+            <?php if(isset($_SESSION['error-login'])):  ?>
+            <div class="alert alert-error">
+                <?=$_SESSION['error-login']; ?>
+            </div>
             <?php endif; ?>
             </div>
+            
             <div class="form-container">
                 <form action="login.php" method="POST">
                     <!-- EMAIL -->
