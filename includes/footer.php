@@ -48,11 +48,11 @@
                 </div>
             </div>
             <!-- copyright -->
-            <div class="copyright-container footer-sign">
+            <div class="copyright-container footer-sign admin-footer">
                 <figure class="logo logo-footer">
                     <img src="./assets/img/Logo.png" alt="">
                 </figure>
-                <p class="text-copyright">
+                <p class="text-copyright ">
                     Copyright &copy; | Desarrollado por Christian Vargas
                 </p>
             </div>

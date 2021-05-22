@@ -26,7 +26,7 @@ if(isset($_POST)){
         if($verifyPassword){
             // Usar los datos del user como una variable de session
             $_SESSION['user'] = $user;
-            header('Location: session.php');
+            header('Location: adminPanel.php');
             exit;
 
             if(isset($_SESSION['error-login'])) {
