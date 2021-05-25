@@ -1,67 +1,101 @@
-/* panel header */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-.site-header {
-    width: 100vw;
-    padding: 2.5rem 5rem;
+html {
+    font-size: 62.5%;
+    background-color: #181818;
+    color: #ffffff;
+}
+
+.header-container {
+    width: 94%;
+    margin: 2rem auto;
+    height: 6.7rem;
     display: flex;
-    justify-content:space-evenly;
     align-items: center;
-}
+    /* border:1px white dashed; */
+}  
 
+/* LOGO */
 .logo-container {
-    width: 80%;
+    width: 57.5%;
+    margin-left: 3rem;
 }
 
-.search {
-    /* background-color: gray; */
-    /* border: 1px solid goldenrod; */
-    width: 20%;
-    margin-left: 1rem;
+.logo {
+    width: 8rem;
+    height: 6.7rem;
 }
+
+.logo img {
+    width: 100%;
+}
+
+/* SEARCH */
 
 .search-container {
-    border: 1px solid brown;
-    background-color: #404040;
+    width: 29.2%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 3.2rem;
-    border: 1px solid #707070;
-    border-radius: .6rem;
 }
-
-.search-logo {
-    width: 10%;
-    text-align: center;
-}
-
-.logout {
+.search {
     display: flex;
-    /* justify-content: space-between; */
-    text-align: center;
-    background-color: lightcoral;
-}
-
-.input-search{
-    /* background-color: blueviolet; */
-    margin: 0;
-    height: auto;
-    width: 90%;
-    /* height: 2rem; */
-}
-
-.input-search input {
-    margin: 0;
-    height: 3.2rem;
-}
-
-.form-items input:focus {
-    border: transparent;
+    align-items: center;
+    width: 80%;
+    height: 3.3rem;
+    background-color: #404040;
+    padding: 0 .5rem;
+    border-radius: 20px;
+    /* outline: 1px solid #707070; */
 }
 
 
-.fa-power-off {
-    font-size: 3rem;
-    text-align: center;
+.icon-search {
+    height: 2.4rem;
+    margin: 0 .5rem;
+}
+
+    /* estilo del search */
+    .search input {
+    color: white;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    letter-spacing: normal;
+    padding-left: 5px;
+}
+
+.search input:focus {
+    padding-left: 5px;
+    outline: none;
+}
+
+/* LOGOUT */
+
+.logout-container {
+    width: 13.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.logout a span {
+    margin-right: .5rem;
 }

@@ -9,38 +9,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Panel</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="/css/style.css">
-        <!-- CSS - LOGIN -->
-        <link rel="stylesheet" href="/css/sign.css">
-        <link rel="stylesheet" href="/css/tablet.css" media="screen and (min-width:600px)">
-        <!-- CSS - LOGIN TABLET -->
-        <link rel="stylesheet" href="/css/signTablet.css">
         <link rel="stylesheet" href="./css/panel.css">
+        <!-- FONT -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <!-- MATERIAL ICONS -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+
     </head>
     <body>
         <header class="site-header">
-            <div class="logo-container">
-                <figure class="logo logo-panel">
-                    <a href="index.php">
+            <div class="header-container">
+                <div class="logo-container">
+                    <figure class="logo">
                         <img src="./assets/img/Logo.png" alt="">
-                    </a>
-                </figure>
-            </div>
-            <div class="search">
-                <div class="search-container ">
-                    <div class="search-logo">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="input-search form-items">
-                        <input type="text" placeholder="Search">
+                    </figure>
+                </div>
+                <div class="search-container">
+                    <div class="search">
+                        <div class="icon-search">
+                            <span class="material-icons-round icon">search</span>
+                        </div>
+                        <input type="text">
                     </div>
                 </div>
-            </div>
-            <div class="logout">
-                <i class="fas fa-power-off" id="off"></i>
-                <div class="text-logout"><p id="user">Logout</p></div>
-                <!-- <i class="far fa-user" id="profile"></i> -->
+                <div class="logout-container">
+                    <div class="logout">
+                            <a class="logout_items" href="">
+                                <span class="material-icons-round">power_settings_new</span>
+                                <p class="logout-text">Logout</p>
+                            </a>
+                    </div>
+                </div>
             </div>
         </header>
         <main class="site-main">
