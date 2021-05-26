@@ -22,7 +22,9 @@
             <div class="header-container">
                 <div class="logo-container">
                     <figure class="logo">
-                        <img src="./assets/img/Logo.png" alt="">
+                        <a href="index.php">
+                            <img src="./assets/img/Logo.png" alt="">
+                        </a>
                     </figure>
                 </div>
                 <div class="search-container">
@@ -44,6 +46,94 @@
             </div>
         </header>
         <main class="site-main">
+            <div class="main-container">
+                <aside class="nav">
+                    <ul class="nav-menu">
+                        <li class="nav-menu__items">
+                            <a href="">
+                                <span class="material-icons-round">space_dashboard</span>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-menu__items">
+                            <a href="">
+                                <span class="material-icons-round">inventory_2</span>
+                                <p>Products</p>
+                            </a>
+                        </li>
+                        <li class="nav-menu__items">
+                            <a href="">
+                                <span class="material-icons-round">people</span>
+                                <p>Customers</p>
+                            </a>
+                        </li>
+                        <li class="nav-menu__items">
+                            <a href="">
+                                <span class="material-icons-round">manage_accounts</span>
+                                <p>Users</p>
+                            </a>
+                        </li>
+                        <li class="nav-menu__items">
+                            <a href="">
+                                <span class="material-icons-round">person</span>
+                                <p>My Data</p>
+                            </a>
+                        </li>
+                        <li class="nav-menu__items logout">
+                            <a href="">
+                                <span class="material-icons-round">power_settings_new</span>
+                                <p class="logout-text">Logout</p>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+                <div class="session-container">
+                    <div class="session-text">
+                        <?php if(isset($_SESSION['user'])):  ?>
+                            <?php echo "<h2>Welcolme {$_SESSION['user']['nombre']} {$_SESSION['user']['apellidos']}</h2>"; ?>
+                            <?php //echo "<pre>";
+                            //var_dump($_SESSION['user']) . '</pre>';?>
+                        <?php else: ?>
+                            <?php echo "<p>Error Login</p>"; ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="session-text message">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos corrupti rem impedit voluptas commodi!
+                        In expedita repellendus odio iure impedit esse officia nostrum reprehenderit laborum ipsam aperiam minus recusandae, inventore ex quidem ab! placeat.</p>    
+                    </div>
+                    
+                    <div class="prices">
+                        <div class="prices-container">
+                            <div class="prices-tittle">
+                                <h2>sold products</h2>    
+                            </div>
+                            <div class="session-text price-text">
+                                <h3>iPhone 13 Mini 64GB 4G</h3>
+                            </div>
+                        </div>
+                        <div class="prices-container">
+                            <div class="prices-tittle">
+                                <h2>Total Sale</h2>    
+                            </div>
+                            <div class="session-text price-text">
+                                <h3>$ 100.000</h3>
+                            </div>
+                        </div>
+                        <div class="prices-container">
+                            <div class="prices-tittle">
+                                <h2>Users</h2>    
+                            </div>
+                            <div class="session-text price-text">
+                                <h3>50 Users</h3>
+                            </div>
+                        </div>
+                        
+                    
+                        
+                    </div>
 
+                </div>
+            </div>
+            
         </main>
 <?php //require_once('includes/footer.php'); ?>
