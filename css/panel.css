@@ -159,11 +159,10 @@ h2 {
     align-items: center;
     color: #ffffff;
     text-decoration: none;
-    width: 16.8rem;
-    height: 6rem;
+    width: 12.8rem;
+    height: 5rem;
     border-radius: 1.7rem;
     font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .nav-menu__items a:hover {
@@ -178,11 +177,12 @@ h2 {
     padding-top: 9rem;
 }
 
-.nav-menu .logout a {
-    background-color: #222222;
+.logout a {
+    /* background-color: #; */
     color: #CB1304;
 }
-.nav-menu .logout a:hover {
+
+.logout a:hover {
     background-color: #CB1304;
     color: #ffffff;
 }
@@ -201,7 +201,7 @@ h2 {
     width: 50%;
     height: 9%;
     margin: 0 auto;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background-color: #404040;
     border-radius: 1.7rem;
     display: flex;

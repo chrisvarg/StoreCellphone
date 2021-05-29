@@ -338,10 +338,11 @@ p, label, input {
     margin-top: .4rem;
     border-radius: .5rem;
 }
-.alert-errors {
-    /* color: ;
-    background-color:  */
+.alert-error {
+    width: 75%;
+    margin: 0 auto;
 }
+
 .alert-complete {
     color: #2f9646;
     background-color: #0b1f14;

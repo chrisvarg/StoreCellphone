@@ -1,6 +1,7 @@
 <title>Sign Up</title>
 <?php require_once('includes/headerSign.php') ?>
 <?php require_once('includes/helpers.php') ?>
+<?php keepSession(); ?>
 
     <main class="site-main">
         <div class="formulary">
