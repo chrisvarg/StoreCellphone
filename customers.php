@@ -10,38 +10,106 @@
                     <?php echo "<p>Error Login</p>"; ?>
                 <?php endif; ?>
             </div>
-            <div class="session-text message">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos corrupti rem impedit voluptas commodi!
-                In expedita repellendus odio iure impedit esse officia nostrum reprehenderit laborum ipsam aperiam minus recusandae, inventore ex quidem ab! placeat.</p>    
+            <div class="buttons">
+                <ul class="buttons-container">
+                    <li class="btn">
+                        <a class="add" href="">
+                            <span class="material-icons-round">add_circle</span>
+                            <p>Add</p>
+                        </a>
+                    </li>
+                    <li class="btn">
+                        <a class="remove" href="">
+                            <span class="material-icons-round">add_circle</span>
+                            <p>Remove</p>
+                        </a>
+                    </li>
+                    <li class="btn">
+                        <a class="update" href="">
+                            <span class="material-icons-round">add_circle</span>
+                            <p>Update</p>
+                        </a>
+                    </li>
+                    
+                </ul>
             </div>
             
-            <div class="prices">
-                <div class="prices-container">
-                    <div class="prices-tittle">
-                        <h2>sold products</h2>    
-                    </div>
-                    <div class="session-text price-text">
-                        <?php $product = lastProduct($db);?>
-                        <h4><?=$product['nombre']?></h4>
-                    </div>
-                </div>
-                <div class="prices-container">
-                    <div class="prices-tittle">
-                        <h2>Total Sale</h2>    
-                    </div>
-                    <div class="session-text price-text">
-                        <?php $users = numberUsers($db);?>
-                        <h4>$ <?=number_format($product['precio'], 0, ',', '.')?></h4>
-                    </div>
-                </div>
-                <div class="prices-container">
-                    <div class="prices-tittle">
-                        <h2>Users</h2>    
-                    </div>
-                    <div class="session-text price-text">
-                        <h3><?=$users['total']?></h3>
-                    </div>
-                </div>
+            <div class="table-container">
+                <h2>List Users</h2>
+                <table class="show-table" >
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Product</th>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>Document</th>
+                            <th>Address</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="">
+                            </td>
+                            <td>1</td>
+                            <td>Christian</td>
+                            <td>Iphone 13 blablabla</td>
+                            <td>Maria</td>
+                            <td>Tabares</td>
+                            <td>123456789</td>
+                            <td>Manzana 54 Lote 14</td>
+                            <td>3108810431</td>
+                            <td>maria@maria.com</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="">
+                            </td>
+                            <td>1</td>
+                            <td>Christian</td>
+                            <td>Iphone 13 blablabla</td>
+                            <td>Maria</td>
+                            <td>Tabares</td>
+                            <td>123456789</td>
+                            <td>Manzana 54 Lote 14</td>
+                            <td>3108810431</td>
+                            <td>maria@maria.com</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="">
+                            </td>
+                            <td>1</td>
+                            <td>Christian</td>
+                            <td>Iphone 13 blablabla</td>
+                            <td>Maria</td>
+                            <td>Tabares</td>
+                            <td>123456789</td>
+                            <td>Manzana 54 Lote 14</td>
+                            <td>3108810431</td>
+                            <td>maria@maria.com</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="">
+                            </td>
+                            <td>1</td>
+                            <td>Christian</td>
+                            <td>Iphone 13 blablabla</td>
+                            <td>Maria</td>
+                            <td>Tabares</td>
+                            <td>123456789</td>
+                            <td>Manzana 54 Lote 14</td>
+                            <td>3108810431</td>
+                            <td>maria@maria.com</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>

@@ -1,7 +1,8 @@
 <?php require_once('includes/conexion.php'); ?>
 <?php require_once('includes/helpers.php'); ?>
 
-<?php if (! isset($_SESSION['user'])){
+<?php 
+if (! isset($_SESSION['user'])){
     header('Location: index.php');
     exit();    
 }
@@ -16,6 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Panel</title>
         <!-- CSS -->
+        <!-- <link rel="stylesheet" href="/css/sign.css"> -->
         <link rel="stylesheet" href="./css/panel.css">
         <!-- FONT -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">

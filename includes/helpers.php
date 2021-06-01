@@ -96,8 +96,8 @@ function keepSession()
      * Redirecciona al admin.php si existe los datos del usuario
      * sino de dirige al index
      */
-    if(isset($_SESSION['user'])) {
-        header('Location: admin.php');
-        exit();
-    }
+    // if(isset($_SESSION['user'])) {
+    //     header('Location: admin.php');
+    //     exit();
+    // }
 }
