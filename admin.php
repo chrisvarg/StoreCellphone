@@ -40,8 +40,13 @@
                     </div>
                     <div class="session-text price-text">
                         <!-- TOTAL DE USUARIOS REGISTRADOS -->
-                        <?php $users = numberUsers($db);?>
-                        <h3><?=$users['total']?></h3>
+                        <?php 
+                            $users = numberUsers($db);
+                            if($users['total'] <= 1): ?>
+                                <h3><?=$users['total']. ' User';?></h3>
+                            <?php else: ?>
+                            <h3><?=$users['total']. ' Users';?></h3>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

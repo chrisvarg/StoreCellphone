@@ -97,7 +97,7 @@ if(isset($_POST)){
         if ($insert) {
             $_SESSION['complete'] = "Registro completado exitosamente";
         } else {
-            echo $_SESSION['errors']['general'] = "Fallo al guardar";
+            $_SESSION['errors']['general'] = "Fallo al guardar";
         }
 
     } else {

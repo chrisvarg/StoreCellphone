@@ -23,7 +23,8 @@
             </div>
             
             <div class="form-container">
-
+                
+                <h2>Update Data</h2>
                 <form action="registre.php" method="POST">
                 <?php if(isset($_SESSION['complete'])) :
                     echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>

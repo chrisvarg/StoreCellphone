@@ -23,6 +23,11 @@ function eraserErrors()
         unset($_SESSION['errors']);
     }
     
+    if (isset($_SESSION['errorsProducts'])) {
+        $_SESSION['errorsProducts'] == null;
+        unset($_SESSION['errorsProducts']);
+    }
+
     if (isset($_SESSION['complete'])) {
         $_SESSION['complete'] == null;
         unset($_SESSION['complete']);
@@ -100,4 +105,29 @@ function keepSession()
         header('Location: admin.php');
         exit();
     }
+}
+
+function redirect()
+{
+    if (! isset($_SESSION['user'])){
+        header('Location: index.php'); 
+    }
+}
+
+function listProducts($db)
+{
+    $sql = 'SELECT * FROM productos;';
+    $products = mysqli_query($db, $sql);
+    $result = [];
+
+    if( $products && mysqli_num_rows($products) >= 1){
+        $result = $products;
+    }
+    return $result;
+
+}
+
+function hola()
+{
+    return 'Hola perra';
 }

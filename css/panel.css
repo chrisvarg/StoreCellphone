@@ -263,6 +263,7 @@ span {
     width: 40rem;
     margin-top: 4rem;
     margin-left: 5.2rem;
+    margin-bottom: 4rem;
 }
 
 .buttons-container{
@@ -369,6 +370,11 @@ span {
     width: 40%;
     margin: 0 auto;
 }
+.form-container h2 {
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+}
 
 .form-container form {
     display: flex;
@@ -474,4 +480,37 @@ span {
 
 .dates {
     margin-left: 2rem;
+}
+
+/* ALERTS */
+
+.alert {
+    color: #ff7b72;
+    font-size: 1.4rem;
+    height: 2rem;
+    padding-top: .2rem;
+    padding-left: .5rem;
+    margin-top: .4rem;
+    border-radius: .5rem;
+    /* width: 75%; */
+}
+.alert-error {
+    margin: 0 auto;
+    background-color: #521c18;
+}
+
+.alert-complete {
+    color: #2f9646;
+    background-color: #0b1f14;
+    width: 75%;
+    height: 4rem;
+    padding-top: 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.alert-save {
+    color: #ff7b72;
+    background-color: #521c18;
 }

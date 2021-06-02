@@ -330,25 +330,33 @@ p, label, input {
 /* ALERTS */
 .alert {
     color: #ff7b72;
-    background-color: #521c18;
     font-size: 1.4rem;
     height: 2rem;
     padding-top: .2rem;
     padding-left: .5rem;
     margin-top: .4rem;
     border-radius: .5rem;
+    width: 75%;
 }
 .alert-error {
-    width: 75%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    background-color: #521c18;
+    width: 100%;
 }
 
 .alert-complete {
+    margin: 0 auto;
     color: #2f9646;
     background-color: #0b1f14;
-    width: 75%;
+    /* width: 75%; */
     height: 4rem;
     padding-top: 1.2rem;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
     text-align: center;
+}
+
+.alert-save {
+    color: #ff7b72;
+    background-color: #521c18;
 }

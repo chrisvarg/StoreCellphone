@@ -17,7 +17,7 @@
 
         <?php if(isset($_SESSION['error-login'])):  ?>
             <!-- error si no hay sessión user -->
-            <div class="alert alert-error">
+            <div class="alert alert-complete alert-save">
                 <?=$_SESSION['error-login']; ?>
             </div>
         <?php endif; ?>
