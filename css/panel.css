@@ -301,6 +301,15 @@ span {
     background-color: #0c6615;
 }
 
+.button-see {
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+.see {
+    justify-content: center;
+}
+
 .remove {
     background-color: #CB1304;
 }
@@ -365,6 +374,8 @@ span {
     width: 100%;
     height: 100%;
 }
+
+/* FORMULARIOS */
 
 .form-container {
     width: 40%;
@@ -463,6 +474,8 @@ span {
     display: flex;
     justify-content: space-around;
 }
+
+/* MOSTRAR INFORMACIÓN */
 
 .information {
     /* background-color: bisque; */

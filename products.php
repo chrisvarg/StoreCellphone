@@ -32,8 +32,9 @@
                     
                 </ul>
             </div>
+            
             <div class="table-container">
-                <h2>List Products</h2>
+                <h2>latest products</h2>
                 <table class="show-table" >
                     <thead>
                         <tr>
@@ -60,7 +61,14 @@
                                         <td><?=$product['nombre']?></td>
                                         <td><?=$product['marca']?></td>
                                         <td><?='$ '.number_format($product['precio'], 0, ',', '.')?></td>
-                                        <td><?=$product['imagen']?></td>
+                                        <td>
+                                            <a href="./products/<?=$product['imagen']?>" target="_blank">
+                                                <figure>
+                                                    <img src="./products/<?=$product['imagen']?>" alt="">
+                                                </figure>
+                                            </a>
+                                            <!-- // -->
+                                        </td>
                                         <td><?=$product['stock']. ' units'?></td>
                                     </tr>
                         <?php 
@@ -70,7 +78,16 @@
                     </tbody>
                 </table>
             </div>
-
+            <div class="buttons button-see">
+                <ul class="buttons-container see">
+                    <li class="btn">
+                        <a class="add" href="add-product.php">
+                            <p>Read More</p>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
     </div>
 </main>

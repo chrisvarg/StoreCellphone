@@ -14,29 +14,32 @@ function showErrors($errors, $date)
 }
 
 function eraserErrors()
-{   
+{     
+    $eraser = false;
     /**
      * Borra los todas las sessiones de error y sus variables
      */
     if (isset($_SESSION['errors'])){
         $_SESSION['errors'] = null;
-        unset($_SESSION['errors']);
+        $eraser = true;
     }
     
     if (isset($_SESSION['errorsProducts'])) {
-        $_SESSION['errorsProducts'] == null;
-        unset($_SESSION['errorsProducts']);
+        $_SESSION['errorsProducts'] = null;
+        $eraser = true;
     }
 
     if (isset($_SESSION['complete'])) {
-        $_SESSION['complete'] == null;
-        unset($_SESSION['complete']);
+        $_SESSION['complete'] = null;
+        $eraser = true;
     }
 
     if (isset($_SESSION['error-login'])){
         $_SESSION['error-login'] = null;
-        unset($_SESSION['error-login']);
+        $eraser = true;
     }
+    
+    return $eraser;
 }
 
 function menuAdmin($userType) {
@@ -116,7 +119,7 @@ function redirect()
 
 function listProducts($db)
 {
-    $sql = 'SELECT * FROM productos;';
+    $sql = 'SELECT * FROM productos ORDER BY id DESC LIMIT 10;';
     $products = mysqli_query($db, $sql);
     $result = [];
 
@@ -127,7 +130,21 @@ function listProducts($db)
 
 }
 
-function hola()
+function lockPosition()
 {
-    return 'Hola perra';
+    if ($_SESSION['user']['position'] == 'boss') {
+        $select = '<select name="position">
+                        <option value="boss">Boss</option>
+                        <option value="employed">Employed</option>
+                    </select>';
+
+    } else {
+        $select = '<select name="position" disabled>
+                        <option value="employed">Employed</option>
+                        <option value="boss">Boss</option>
+                   </select>';
+    }
+    
+    return $select;
+    
 }
