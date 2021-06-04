@@ -3,12 +3,7 @@
 
 <div class="session-container">
             <div class="session-text">
-                <?php if(isset($_SESSION['user'])):  ?>
-                    <h2>Users</h2>
-                    
-                <?php else: ?>
-                    <?php echo "<p>Error Login</p>"; ?>
-                <?php endif; ?>
+                    <h2>Users</h2>                    
             </div>
             <div class="buttons">
                 <ul class="buttons-container">

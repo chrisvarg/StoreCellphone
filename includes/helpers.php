@@ -73,7 +73,7 @@ function menuAdmin($userType) {
 function lastProduct($db) 
 {
     /**
-     * Consulta el ultimo producto ingresado en la db
+     * Consulta el ultimo producto comprado ingresado en la db
      */
     $sql = "SELECT c.id, c.id_producto, p.nombre, p.precio, c.fecha
             FROM clientes c
@@ -91,7 +91,7 @@ function numberUsers($db)
     /**
      * Consulta cuantos usuarios se encuentran en la db
      */
-    $sql = 'SELECT COUNT(id) AS total FROM usuarios;';
+    $sql = "SELECT COUNT(id) AS total FROM usuarios;";
     $numerUsers = mysqli_query($db, $sql);
     $numerUsers = mysqli_fetch_assoc($numerUsers);
 
@@ -112,23 +112,63 @@ function keepSession()
 
 function redirect()
 {
+    /**
+     * Si la sessión de usuario no existe redirecciona
+     */
     if (! isset($_SESSION['user'])){
         header('Location: index.php'); 
     }
 }
 
-function listProducts($db)
+function listProducts($db, $limit = null)
 {
-    $sql = 'SELECT * FROM productos ORDER BY id DESC LIMIT 10;';
+    /**
+     * Consulta la lista de los productos registrados
+     * segundo parametro limita a 10, si es true
+     */
+    $sql = "SELECT * FROM productos ORDER BY id ";
+
+    if($limit){
+        $sql .= "DESC LIMIT 2";
+    }
+
     $products = mysqli_query($db, $sql);
+    
     $result = [];
 
     if( $products && mysqli_num_rows($products) >= 1){
         $result = $products;
     }
     return $result;
-
 }
+
+function product($db, $id)
+{
+    /**
+     * Consulta la lista de los productos registrados
+     * segundo parametro limita a 10, si es true
+     *
+     * 
+    * Puede servir para mostrar en el index*/
+
+    $sql = "SELECT * FROM productos WHERE id = '{$id}';";
+    $products = mysqli_query($db, $sql);
+    
+    $result = [];
+    if( $products && mysqli_num_rows($products) >= 1){
+        $result = mysqli_fetch_assoc($products);
+
+    }
+    return $result;
+}
+
+function productExist($db, $id){
+    $product = product($db, $id);
+    if (! isset($product['id'])) {
+        header('Location: products.php');
+    }
+}
+
 
 function lockPosition()
 {

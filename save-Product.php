@@ -57,11 +57,11 @@ if(isset($_POST)) {
 
     // VALIDACION STOCK
     if ((! empty($stock)) && (is_int($stock))) {
-        echo $validStock = true;
+        $validStock = true;
 
     } else {
         $validAStock = false;
-        echo $errors['stock'] = 'Invalid Stock ';
+        $errors['stock'] = 'Invalid Stock ';
     }
 
     // VALIDACION DESCRIPTION
@@ -84,42 +84,57 @@ if(isset($_POST)) {
         if (!is_dir($imagesProducts)) {
             mkdir($imagesProducts, 07777);
         }
+        
+        // COMPROBAR SI EL NOMBRE YA EXISTE EN LA DB
+        $sql = "SELECT id, nombre FROM productos
+                WHERE nombre = '{$name}';";
+        
+        $issetname = mysqli_query($db, $sql);
+        $issetProduct = mysqli_fetch_assoc($issetname) ;
 
-        if($validImage) {
+        
+        if(empty($issetProduct)) {
 
-            /** Existe imagen
-             * Crea una nombres aleatorios para las imagenes a subir
-             * md5 encripta y da el nombre uniqid genera un id unico
-             * rand genera un numero aleatorio
-            */
-            $nameImagesProducts = md5(uniqid(rand(), true)) . '.jpg';
-            move_uploaded_file($image['tmp_name'], $imagesProducts.$nameImagesProducts);
+            if ($validImage) {
+    
+                /** Existe imagen
+                 * Crea una nombres aleatorios para las imagenes a subir
+                 * md5 encripta y da el nombre uniqid genera un id unico
+                 * rand genera un numero aleatorio
+                */
+                $nameImagesProducts = md5(uniqid(rand(), true)) . '.jpg';
+                move_uploaded_file($image['tmp_name'], $imagesProducts.$nameImagesProducts);
+    
+    
+                 // INSERTAR EL PRODUCTO A LA BASE DE DATOS
+                // Consulta para subir los datos
+                $sql = "INSERT INTO productos
+                        VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$nameImagesProducts}', '$stock');";
+            }elseif ($image == 'No image') {
+    
+                // Si no existe la imagen
+                $sql = "INSERT INTO productos
+                    VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$image}', '$stock');";
+            }
+    
+            $insert = mysqli_query($db, $sql);
+            if ($insert) {
+                $_SESSION['complete'] = 'Registration completed';
+                echo "bien";
+    
+            } else {
+                $_SESSION['errorsProducts']['save'] = 'Save failed';
+            }
 
-             // INSERTAR EL PRODUCTO A LA BASE DE DATOS
-            // Consulta para subir los datos
-            $sql = "INSERT INTO productos
-                    VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$nameImagesProducts}', '$stock');";
-        }elseif ($image == 'No image') {
-
-            // Si no existe la imagen
-            $sql = "INSERT INTO productos
-                VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$image}', '$stock');";
+        }else {
+            $_SESSION['errorsProducts']['save'] = 'Product exist';
         }
 
-        $insert = mysqli_query($db, $sql);
-        if ($insert) {
-            $_SESSION['complete'] = 'Registration completed';
-            echo "bien";
-
-        } else {
-            $_SESSION['errorsProducts']['save'] = 'Save failed';
-            echo 'mal';
-        }
-
-        // ERRORES O COMPEETE
+        
+        
+        // ERRORES O COMPLETE
     } else {
         $_SESSION['errorsProducts'] = $errors;        
     }
 }
-
 header('Location: add-product.php');

@@ -4,10 +4,9 @@
 <?php $user = $_SESSION['user']?>
 <div class="session-container">
             <div class="session-text">
-                <?php if(isset($user)):  ?>
                     <h2>My Data</h2>
-                <?php endif; ?>
             </div>
+            
             <div class="session-text message date">
                 <div class="information dates">
                     <h4>Full Name</h4>

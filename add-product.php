@@ -32,7 +32,6 @@
                             <p>Update</p>
                         </a>
                     </li>
-                    
                 </ul>
             </div>
     
@@ -44,8 +43,9 @@
 
                     <?php if(isset($_SESSION['complete'])) :
                         echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
-                    <?php elseif (isset($_SESSION['errorsProduct']['save'])) :
-                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errorsProduct']['save']}</div>";?>
+                    <?php elseif (isset($_SESSION['errorsProducts']['save'])) :
+                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errorsProducts']['save']}</div>";?>
+
                     <?php endif; ?>
                     <!-- NAME -->
                     <div class="form-items">
@@ -96,7 +96,7 @@
                     <div class="button-container">
                         <input class="button" type="submit" value="Continue">
                     </div>
-                       
+                    
                 </form>
                 <!-- aqui -->
                 <?php eraserErrors();?>

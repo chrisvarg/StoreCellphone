@@ -3,7 +3,10 @@
 
 <div class="session-container">
             <div class="session-text">
-                    <h2>Products</h2>
+                <?php if(isset($_SESSION['user'])):  ?>
+                    <h2>All Products</h2>
+
+                <?php endif; ?>
             </div>
             
             <div class="buttons">
@@ -31,7 +34,6 @@
             </div>
             
             <div class="table-container">
-                <h2>latest products</h2>
                 <table class="show-table" >
                     <thead>
                         <tr>
@@ -45,7 +47,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $products = listProducts($db, true);
+                        <?php $products = listProducts($db);
                         
                             if(!empty($products)) :
                                 while($product = mysqli_fetch_assoc($products)): 
@@ -53,7 +55,7 @@
                                     <tr>
                                         <td><a href="product.php?id=<?=$product['id'];?>">Details</a></td>
                                         <td><?=$product['id'];?></td>
-                                        <td><?=$product['nombre'];?></td>
+                                        <td><?=$product['nombre']?></td>
                                         <td><?=$product['marca']?></td>
                                         <td>$ <?=number_format($product['precio'], 0, ',', '.')?></td>
                                         <td>
@@ -73,16 +75,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="buttons button-see">
-                <ul class="buttons-container see">
-                    <li class="btn">
-                        <a class="add" href="all-products.php">
-                            <p>See More</p>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
+
         </div>
     </div>
 </main>

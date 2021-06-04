@@ -92,7 +92,7 @@ if(isset($_POST)){
                 $_SESSION['errors']['general'] = "Update failed";
             }
         } else {
-            $_SESSION['errors']['general'] = "User exists";
+            $_SESSION['errors']['general'] = "User exist";
         }
 
     } else {

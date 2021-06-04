@@ -3,10 +3,9 @@
 
 <div class="session-container">
             <div class="session-text">
-                <?php if(isset($_SESSION['user'])):  ?>
                     <h2>Customers</h2>
-                <?php endif; ?>
             </div>
+            
             <div class="buttons">
                 <ul class="buttons-container">
                     <li class="btn">
