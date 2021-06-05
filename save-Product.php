@@ -51,7 +51,7 @@ if(isset($_POST)) {
     if (! empty($image) && ($image['type'] == 'image/jpeg' || $image['type'] == 'image/png' || $image['type'] == 'image/gif' || $image['type'] == 'image/webp')) {
         $validImage = true;
     }else {
-        $image = 'No image';
+        $image = '';
         $validImage = false;
     }
 
@@ -110,7 +110,7 @@ if(isset($_POST)) {
                 // Consulta para subir los datos
                 $sql = "INSERT INTO productos
                         VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$nameImagesProducts}', '$stock');";
-            }elseif ($image == 'No image') {
+            }elseif ($image == '') {
     
                 // Si no existe la imagen
                 $sql = "INSERT INTO productos

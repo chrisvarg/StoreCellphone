@@ -168,6 +168,14 @@ function productExist($db, $id){
         header('Location: products.php');
     }
 }
+function noGetProduct($db, $id){
+    $product = product($db, $id);
+    if (! isset($product['id'])) {
+        // echo 'noGet';
+        // die();
+        header("Location: product.php?id={$id}");
+    }
+}
 
 
 function lockPosition()
@@ -186,5 +194,27 @@ function lockPosition()
     }
     
     return $select;
+    
+}
+
+function remove($db, $idGet, $valor)
+{   
+    $result = false;
+    if (empty($idGet)) {
+        $result = false;
+        
+    }else {
+    
+        // id del producto a remover
+        $sql = "DELETE from productos WHERE $valor = '{$idGet}';";
+        $remove = mysqli_query($db, $sql);
+        $result = true;
+    }
+
+    return $result;
+}
+
+function update()
+{
     
 }

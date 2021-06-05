@@ -14,19 +14,6 @@
                             <p>Add</p>
                         </a>
                     </li>
-                    <li class="btn">
-                        <a class="remove" href="">
-                            <span class="material-icons-round">add_circle</span>
-                            <p>Remove</p>
-                        </a>
-                    </li>
-                    <li class="btn">
-                        <a class="update" href="">
-                            <span class="material-icons-round">add_circle</span>
-                            <p>Update</p>
-                        </a>
-                    </li>
-                    
                 </ul>
             </div>
             
@@ -46,10 +33,13 @@
                     </thead>
                     <tbody>
                         <?php $products = listProducts($db, true);
-                        
+                        // mysqli_num_rows()
                             if(!empty($products)) :
                                 while($product = mysqli_fetch_assoc($products)): 
                         ?>
+                                    <?=$product['id'];?>
+                                    <?=$product['nombre'];?>
+                                    <?=$product['marca'];?>
                                     <tr>
                                         <td><a href="product.php?id=<?=$product['id'];?>">Details</a></td>
                                         <td><?=$product['id'];?></td>

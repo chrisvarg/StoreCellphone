@@ -403,7 +403,8 @@ span {
     font-size: 1.6rem;
 }
 
-.form-items input {
+.form-items input,
+.form-items textarea {
     color: #eeeeee;
     font-size: 1.6rem;
     width: 100%;
@@ -417,8 +418,15 @@ span {
 
 .form-items input[type="text"],
 .form-items input[type="email"],
+.form-items input[type="number"],
+.form-items input[type="files"],
 .form-items input[type="password"] {
     padding-left: 8px;
+}
+
+.form-items input[type="file"]{
+    border: none;
+    background-color: transparent;
 }
 
 .form-items input:focus {
@@ -426,6 +434,22 @@ span {
     outline: none;
     border-radius: 6px;
     border: 1px solid #707070;
+}
+
+.form-container .update-description{
+    width: 240%;
+}
+
+form .update-description {
+    margin: 1rem 6.1rem;
+}
+
+.form-items textarea {
+    
+    margin-top: .5rem;
+    height: auto;
+    /* width: 300px; */
+    width: 100%;
 }
 
 .sessions-registre {
@@ -500,16 +524,17 @@ span {
 .alert {
     color: #ff7b72;
     font-size: 1.4rem;
-    height: 2rem;
     padding-top: .2rem;
     padding-left: .5rem;
     margin-top: .4rem;
     border-radius: .5rem;
+    height: auto;
     /* width: 75%; */
 }
 .alert-error {
     margin: 0 auto;
     background-color: #521c18;
+    height: 2rem;
 }
 
 .alert-complete {
@@ -518,6 +543,7 @@ span {
     width: 75%;
     height: 4rem;
     padding-top: 1.2rem;
+    margin: 0 auto;
     margin-bottom: 1rem;
     font-size: 1.5rem;
     text-align: center;
@@ -528,13 +554,21 @@ span {
     background-color: #521c18;
 }
 
+.alert-update {
+    height: auto;
+    width: 40.5%;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+
 /* mostrar los elementos bases de datos */
 .product-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: 3rem;
-    margin-top: 4rem;
+    margin-top: 0rem;
     margin-bottom: 0;
 }
 
@@ -577,4 +611,23 @@ span {
 
 .buttons-products {
     margin: 0 auto;
+}
+
+/* ACTUALIZAR  */
+
+.update-tittle {
+    margin: 7rem 2rem 3rem;
+    text-align: center;
+}
+
+.product-update {
+    align-items:flex-start;
+}
+
+.update-image {
+    margin-top: 3rem;
+}
+
+.update-form {
+    margin: 0;
 }

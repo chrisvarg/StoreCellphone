@@ -21,14 +21,14 @@
 
                             <?php elseif(isset($menu)): ?>
                                 <a href='<?=strtolower(str_replace(' ', '', "$menu.php"));?>'>
-                            <?php endif; ?>
+                            <?php endif;?>
                                 <span class='material-icons-round'><?=$icon?></span>
                                 <p><?=$menu?></p>
                             </a>
                         </li>
-                    <?php endforeach?>
-                <?php endif?>
-                          
+                    <?php endforeach;?>
+                <?php endif;?>
+
                 <li class="nav-menu__items logout">
                     <a href="logout.php">
                         <span class="material-icons-round">power_settings_new</span>

@@ -74,7 +74,7 @@
                     <!-- IMAGE -->
                     <div class="form-items">
                         <label for="imagen">Image</label><br>
-                        <input type="file" name="imagen">
+                        <input type="file" name="imagen" required="required">
                     </div>
         
                     <!-- STOCK -->

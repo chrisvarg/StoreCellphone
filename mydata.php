@@ -27,12 +27,12 @@
                 <h2>Update Data</h2>
 
                 <form action="update-User.php" method="POST">
-                <?php 
-                if(isset($_SESSION['complete'])) :
-                    echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
-                <?php elseif (isset($_SESSION['errors']['general'])) :
-                    echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
-                <?php endif; ?>
+                    <?php 
+                    if(isset($_SESSION['complete'])) :
+                        echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
+                    <?php elseif (isset($_SESSION['errors']['general'])) :
+                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
+                    <?php endif; ?>
                     <!-- NAME -->
                     <div class="form-items name">
                         <label for="nombre">Name</label> <br/>

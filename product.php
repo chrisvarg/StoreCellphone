@@ -11,29 +11,20 @@
 <div class="session-container">
             <div class="session-text">
                 <?php 
-                    if(isset($_SESSION['user'])):  ?>
+                    if(isset($_SESSION['user'])):?>
                         <h2><?=$product['nombre']?></h2>
                     <?php endif; ?>
             </div>
             
-            <!-- <div class="buttons">
-                <ul class="buttons-container">
-                    <li class="btn">
-                        <a class="remove" href="">
-                            <span class="material-icons-round">add_circle</span>
-                            <p>Remove</p>
-                        </a>
-                    </li>
-                    <li class="btn">
-                        <a class="update" href="">
-                            <span class="material-icons-round">add_circle</span>
-                            <p>Update</p>
-                        </a>
-                    </li>
-                </ul>
-            </div> -->
-            
+            <div class="alert alert-update">
+                <?php if(isset($_SESSION['complete'])) :
+                    echo "<div class='alert alert-complete alert-udpdate'>{$_SESSION['complete']}</div>"; ?>
+                    <?php //header("Refresh: 5; URL=product.php?id={$product['id']}")?>
+                <?php endif; ?>        
+            </div>
             <div class="product-container">
+                
+
                 <div class="product-image">
                     <figure>
                         <img src="./products/<?=$product['imagen']?>" alt="">
@@ -55,14 +46,14 @@
             <div class="buttons buttons-products">
                 <ul class="buttons-container ">
                     <li class="btn">
-                        <a class="remove" href="remove-product.php">
+                        <a class="remove" href="remove-product.php?id=<?=$product['id']?>">
                             <span class="material-icons-round">add_circle</span>
                             <p>Remove</p>
                         </a>
                     </li>
 
                     <li class="btn">
-                        <a class="update" href="update-product-php">
+                        <a class="update" href="update-product.php?id=<?=$product['id']?>">
                             <span class="material-icons-round">add_circle</span>
                             <p>Update</p>
                         </a>
@@ -70,19 +61,9 @@
                 </ul>
             </div>
             
-           
-            <!-- <div class="buttons button-see">
-                <ul class="buttons-container see">
-                    <li class="btn">
-                        <a class="add" href="all-products.php">
-                            <p>See More</p>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div> -->
         </div>
     </div>
+    <?php eraserErrors();?>
 </main>
 
 <pre>
