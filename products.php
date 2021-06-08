@@ -37,9 +37,6 @@
                             if(!empty($products)) :
                                 while($product = mysqli_fetch_assoc($products)): 
                         ?>
-                                    <?=$product['id'];?>
-                                    <?=$product['nombre'];?>
-                                    <?=$product['marca'];?>
                                     <tr>
                                         <td><a href="product.php?id=<?=$product['id'];?>">Details</a></td>
                                         <td><?=$product['id'];?></td>

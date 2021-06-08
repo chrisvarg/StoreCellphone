@@ -2,8 +2,8 @@
 
 <?php 
     $product = product($db, $_GET['id']);
-    $existe = noGetProduct($db, $_GET['id']);
-    
+    $existe = productExist($db, $_GET['id']);
+    var_dump($existe);
     ?>
     
 
@@ -26,12 +26,12 @@
 
                     <form action="edit-product.php?id=<?=$product['id']?>" method="POST" enctype="multipart/form-data">
 
-                    <?php if(isset($_SESSION['complete'])) :
-                        echo "<div class='alert alert-complete'>{$_SESSION['complete']}</div>"; ?>
-                    <?php elseif (isset($_SESSION['errorsProducts']['save'])) :
-                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errorsProducts']['save']}</div>";?>
+                        <?php if(isset($_SESSION['complete'])) :
+                            echo "<div class='alert alert-complete'>{$_SESSION['complete']}</div>"; ?>
+                        <?php elseif (isset($_SESSION['errorsProducts']['save'])) :
+                            echo "<div class='alert alert-complete alert-save'>{$_SESSION['errorsProducts']['save']}</div>";?>
 
-                    <?php endif; ?>
+                        <?php endif; ?>
                         <!-- NAME -->
                         <div class="form-items">
                             <label for="nombre">Name</label><br>
@@ -59,12 +59,7 @@
                         <!-- IMAGE -->
                         <div class="form-items">
                             <label for="imagen">Image</label><br>
-                            <input type="file" name="imagen" value="<?=$product['imagen']?>">
-                            <pre>
-                            <?php 
-                            // var_dump($product['imagen']);
-                            // die();
-                            ?>
+                            <input type="file" name="imagen" value="<?=$user['imagen']?>">
                         </div>
                         <input type="hidden" name="nameImage" value="<?=$product['imagen']?>">
 
@@ -94,7 +89,7 @@
                         
                     </form>
                     <!-- aqui -->
-                    <?php eraserErrors();?>
+                <?php eraserErrors();?>
                 </div>
 
                 <!-- <div class="product-image update-image">

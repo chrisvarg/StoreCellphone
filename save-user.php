@@ -1,7 +1,5 @@
 <?php
 
-
-
 if(isset($_POST)){
     
     // CONEXIÓN BASE DE DATOS   
@@ -29,10 +27,10 @@ if(isset($_POST)){
 
     // ARRAY DE ERRORES
     $errors = [];
-    
+
     // VERIFICAR LOS DATOS QUE LLEGAN
 
-        // validación nombre
+    // validación nombre
     if ((! empty($name)) && (! is_numeric($name)) && (! preg_match('/[0-9]/', $name))) {
         $validName = true;
     } else {
@@ -64,7 +62,7 @@ if(isset($_POST)){
         $errors['email'] = "Invalid email";
     }
 
-       // validación password
+        // validación password
     if (! empty($password)) {
         $validPassword = true;
     } else {
@@ -72,12 +70,14 @@ if(isset($_POST)){
         $errors['password'] = "Empty password";
     }
 
-    // VALIDAR CUANTOS ERRORES SE PRESENTARON SINO SUBIR DB
+        // VALIDAR CUANTOS ERRORES SE PRESENTARON SINO SUBIR DB
     $userSave = false;
     if (count($errors) == 0 ) {
         
+        
         $userSave = true;
 
+        
         // CIFRAR LA CONTRASEÑA
             /**
              * Las contraseñas se deben cifrar ya que se guardarian
@@ -86,23 +86,23 @@ if(isset($_POST)){
             */
         $securepassword = password_hash($password,PASSWORD_BCRYPT, ['cost=>4 ']);
 
-
         // INSERTAR EL USUARIO A LA BASE DE DATOS
-            // consulta para subir los datos
+        // consulta para subir los datos
         $sql = "INSERT INTO usuarios 
                 VALUES(null, '{$name}', '{$lastname}', '{$position}', '{$email}', '{$securepassword}', NULL, CURDATE())";
+            
             // Subir los datos a la tabla usuarios db
         $insert = mysqli_query($db, $sql);
+        
 
         if ($insert) {
-            $_SESSION['complete'] = "Registro completado exitosamente";
+            $_SESSION['complete'] = "Registration Completed";
         } else {
-            $_SESSION['errors']['general'] = "Fallo al guardar";
+            $_SESSION['errors']['general'] = "Save Failed";
         }
-
-    } else {
+    }else {
         $_SESSION['errors'] = $errors;
     }
     
 }
-header('Location: signUp.php');
+header('Location: add-user.php');

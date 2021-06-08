@@ -168,14 +168,7 @@ function productExist($db, $id){
         header('Location: products.php');
     }
 }
-function noGetProduct($db, $id){
-    $product = product($db, $id);
-    if (! isset($product['id'])) {
-        // echo 'noGet';
-        // die();
-        header("Location: product.php?id={$id}");
-    }
-}
+
 
 
 function lockPosition()
@@ -197,7 +190,7 @@ function lockPosition()
     
 }
 
-function remove($db, $idGet, $valor)
+function remove($db, $idGet, $valor, $tabla)
 {   
     $result = false;
     if (empty($idGet)) {
@@ -206,7 +199,9 @@ function remove($db, $idGet, $valor)
     }else {
     
         // id del producto a remover
-        $sql = "DELETE from productos WHERE $valor = '{$idGet}';";
+        $sql = "DELETE from $tabla WHERE $valor = '{$idGet}';";
+        // echo $sql;
+        // die();
         $remove = mysqli_query($db, $sql);
         $result = true;
     }
@@ -214,7 +209,76 @@ function remove($db, $idGet, $valor)
     return $result;
 }
 
-function update()
+function listCustomers($db, $limit = null)
 {
+    /**
+     * Consulta la lista de los productos registrados
+     * segundo parametro limita a 10, si es true
+     */
+    $sql = "SELECT * FROM clientes ORDER BY id ";
+
+    if($limit){
+        $sql .= "DESC LIMIT 2";
+    }
+
+    $customers = mysqli_query($db, $sql);
+    $result = [];
+
+    if( $customers && mysqli_num_rows($customers) >= 1){
+        $result = $customers;
+    }
+    return $result;
+}
+function listUsers($db, $limit = null)
+{
+    /**
+     * Consulta la lista de los usuarios registrados
+     * segundo parametro limita a 10, si es true
+     */
+    $sql = "SELECT * FROM usuarios ORDER BY id ";
+
+    if($limit){
+        $sql .= "DESC LIMIT 2";
+    }
+
+    $users = mysqli_query($db, $sql);
+    $result = [];
+
+    if( $users && mysqli_num_rows($users) >= 1){
+        $result = $users;
+    }
+    return $result;
+}
+
+function user($db, $id)
+{
+    /**
+     * Consulta la lista de los productos registrados
+     * segundo parametro limita a 10, si es true
+     *
+     * 
+    * Puede servir para mostrar en el index*/
+
+    $sql = "SELECT * FROM usuarios WHERE id = '{$id}';";
+    $usuario = mysqli_query($db, $sql);
     
+    $result = [];
+    if( $usuario && mysqli_num_rows($usuario) >= 1){
+        $result = mysqli_fetch_assoc($usuario);
+    }
+    return $result;
+}
+
+function UserExist($db, $id){
+    $user = user($db, $id);
+    if (! isset($user['id'])) {
+        header('Location: users.php');
+    }
+}
+
+function userRestrictions($position) {
+    if ($position == 'employed') {
+        return header('Location: admin.php');
+        // exit();
+    }
 }

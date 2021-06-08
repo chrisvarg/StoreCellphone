@@ -9,24 +9,11 @@
             <div class="buttons">
                 <ul class="buttons-container">
                     <li class="btn">
-                        <a class="add" href="">
+                        <a class="add" href="add-customer.php">
                             <span class="material-icons-round">add_circle</span>
                             <p>Add</p>
                         </a>
                     </li>
-                    <li class="btn">
-                        <a class="remove" href="">
-                            <span class="material-icons-round">add_circle</span>
-                            <p>Remove</p>
-                        </a>
-                    </li>
-                    <li class="btn">
-                        <a class="update" href="">
-                            <span class="material-icons-round">add_circle</span>
-                            <p>Update</p>
-                        </a>
-                    </li>
-                    
                 </ul>
             </div>
             

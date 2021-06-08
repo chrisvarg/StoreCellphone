@@ -14,6 +14,11 @@ if(isset($_POST)) {
     
     $idcurrent =  $_GET['id'];
 
+    // echo '<pre>';
+    // var_dump($_POST);
+    // echo '<br>';
+    // var_dump($image);
+    // die();
 
     // ERRORES
     $errors = [];
@@ -85,22 +90,6 @@ if(isset($_POST)) {
             mkdir($imagesProducts, 07777);
         }
         
-        if ($image['name']) {
-            // eliminamos la imagen anterior
-            unlink($imagesProducts . $oldProduct['imagen']);
-
-            /** 
-             * Crea una nombres aleatorios para las imagenes a subir
-             * md5 encripta y da el nombre uniqid genera un id unico
-             * rand genera un numero aleatorio
-            */
-            $nameImagesProducts = md5(uniqid(rand(), true)) . '.jpg';
-            move_uploaded_file($image['tmp_name'], $imagesProducts . $nameImagesProducts);
-
-        } else {
-            $nameImagesProducts = $nameImageCurrent;
-        }
-
         /**
          * Comprobar si los datos que vamos a cambiar son los mismos
          * son los mis que entran por GET
@@ -121,6 +110,34 @@ if(isset($_POST)) {
         $issetname = mysqli_query($db, $sql);
         $issetProduct = mysqli_fetch_all($issetname);
         
+
+
+
+        if ($image['name']) {
+            // eliminamos la imagen anterior
+            unlink($imagesProducts . $oldProduct['imagen']);
+            
+            // echo '<pre>';
+            
+            // var_dump($image['name']);
+            // echo '<br>';
+            // var_dump(count($issetUser));
+            // die();
+
+
+            /** 
+             * Crea una nombres aleatorios para las imagenes a subir
+             * md5 encripta y da el nombre uniqid genera un id unico
+             * rand genera un numero aleatorio
+            */
+            $nameImagesProducts = md5(uniqid(rand(), true)) . '.jpg';
+            move_uploaded_file($image['tmp_name'], $imagesProducts . $nameImagesProducts);
+
+        } else {
+            $nameImagesProducts = $nameImageCurrent;
+            // echo 'Sin imagen';
+            // die();
+        }
 
         if ((empty($verifyNameProduct))){
             /**

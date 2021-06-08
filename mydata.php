@@ -1,24 +1,45 @@
 <?php require_once('includes/headerPanel.php')?>
 <?php require_once('includes/sidebarPanel.php')?>
 
-<?php $user = $_SESSION['user']?>
+<?php if ($user = $_SESSION['user']):?>
+    <?php $user = user($db, $user['id']);?>
+    <?php endif;?>
+
 <div class="session-container">
             <div class="session-text">
                     <h2>My Data</h2>
             </div>
             
-            <div class="session-text message date">
-                <div class="information dates">
-                    <h4>Full Name</h4>
-                    <p><?=$user['nombre']?></p>
-                    <h4>Last Name</h4>
-                    <p><?=$user['apellidos']?></p>
+            <div class="alert alert-update">
+                <?php 
+                    if(isset($_SESSION['complete'])) :
+                        echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
+                    <?php elseif (isset($_SESSION['errors']['general'])) :
+                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
+                    <?php endif; ?>
+            </div>
+            <div class="element-container element-user">
+                <div class="element-image">
+                    <figure >
+                        <img class="element-profile" src="./users/<?=$user['imagen']?>" alt="">
+                    </figure>
+                    <pre>
+                    
+                    <?php 
+                        // var_dump($user);
+                        // die();
+                    ?>
+                    </pre>
                 </div>
-                <div class="information">
-                    <h4>Position</h4>
-                    <p><?=$user['position']?></p>
-                    <h4>Email</h4>
-                    <p><?=$user['email']?></p>
+                <div class="session-text message element-text">
+                    <div class="information dates element-text__date">
+                        <h4>Id: <span><?=$user['id']?></span></h4>
+                        <h4>Name: <span><?=$user['nombre']?></span></h4>
+                        <h4>Last Name: <span><?=$user['apellidos']?></span></h4>
+                        <h4>Position: <span><?=$user['position']?></span></h4>
+                        <h4>E-mail: <span><?=$user['email']?></span></h4>
+                        <h4>fecha: <span><?=$user['fecha']?></span></h4>
+                    </div>    
                 </div>
             </div>
             
@@ -26,11 +47,9 @@
                 
                 <h2>Update Data</h2>
 
-                <form action="update-User.php" method="POST">
+                <form action="update-mydata.php" method="POST" enctype="multipart/form-data">
                     <?php 
-                    if(isset($_SESSION['complete'])) :
-                        echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
-                    <?php elseif (isset($_SESSION['errors']['general'])) :
+                    if(isset($_SESSION['errors']['general'])) :
                         echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
                     <?php endif; ?>
                     <!-- NAME -->
@@ -66,6 +85,12 @@
                         ?>
                         <input type="email" name="email" value="<?=$user['email'];?>" required="required" >
                     </div>
+                    <!-- IMAGE -->
+                    <div class="form-items">
+                        <label for="imagen">Image</label><br>
+                        <input type="file" name="imagen" value="<?=$user['imagen']?>" >
+                    </div>
+                    <input type="hidden" name="nameImage" value="<?=$user['imagen']?>">
                     
                     <div class="button-container">
                         <input class="button" type="submit" value="Update">

@@ -1,10 +1,5 @@
-<?php require_once('includes/headerPanel.php'); ?>
-<?php 
-    $user = $_SESSION['user'];
-    userRestrictions($user['position']);
-?>
+<?php require_once('includes/headerPanel.php')?>
 <?php require_once('includes/sidebarPanel.php')?>
-
 
 <div class="session-container">
             <div class="session-text">
@@ -36,7 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php  $users = listUsers($db, true);
+                        <?php  $users = listUsers($db);
                             if (!empty($users)):
                                 while($user = mysqli_fetch_assoc($users)):
                         ?>

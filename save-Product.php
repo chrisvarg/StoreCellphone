@@ -15,6 +15,12 @@ if(isset($_POST)) {
     $description = $_POST['description'] ? mysqli_real_escape_string($db, $_POST['description']) : false;
     $image = $_FILES['imagen'];
 
+
+    // echo '<pre>';
+    // var_dump($_POST);
+    // echo '<br>';
+    // var_dump($image);
+    // die();
     // ERRORES
     $errors = [];
 
@@ -110,13 +116,8 @@ if(isset($_POST)) {
                 // Consulta para subir los datos
                 $sql = "INSERT INTO productos
                         VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$nameImagesProducts}', '$stock');";
-            }elseif ($image == '') {
-    
-                // Si no existe la imagen
-                $sql = "INSERT INTO productos
-                    VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$image}', '$stock');";
             }
-    
+            
             $insert = mysqli_query($db, $sql);
             if ($insert) {
                 $_SESSION['complete'] = 'Registration completed';
