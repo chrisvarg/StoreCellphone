@@ -115,7 +115,8 @@ if(isset($_POST)) {
                  // INSERTAR EL PRODUCTO A LA BASE DE DATOS
                 // Consulta para subir los datos
                 $sql = "INSERT INTO productos
-                        VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}', '{$nameImagesProducts}', '$stock');";
+                        VALUES (null, '{$name}', '{$brand}', '{$price}', '{$description}',
+                        '{$nameImagesProducts}', '{$stock}');";
             }
             
             $insert = mysqli_query($db, $sql);

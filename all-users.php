@@ -31,7 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php  $users = listUsers($db);
+                        <?php  $users = listElements($db, 'usuarios');
                             if (!empty($users)):
                                 while($user = mysqli_fetch_assoc($users)):
                         ?>

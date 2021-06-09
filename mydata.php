@@ -2,7 +2,7 @@
 <?php require_once('includes/sidebarPanel.php')?>
 
 <?php if ($user = $_SESSION['user']):?>
-    <?php $user = user($db, $user['id']);?>
+    <?php $user = element($db, $user['id'], 'usuarios');?>
     <?php endif;?>
 
 <div class="session-container">

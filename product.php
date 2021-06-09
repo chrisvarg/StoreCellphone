@@ -1,8 +1,8 @@
 <?php require_once('includes/headerPanel.php'); ?>
 <pre>
 <?php 
-    $product = product($db, $_GET['id']);
-    $existe = productExist($db, $_GET['id']);
+    $product = element($db, $_GET['id'], 'productos');
+    $existe = elementExist($db, $_GET['id'], 'productos');
 ?>
 </pre>
 <?php require_once('includes/sidebarPanel.php'); ?>

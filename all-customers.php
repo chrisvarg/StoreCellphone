@@ -32,14 +32,15 @@
             </div>
             
             <div class="table-container">
-                <h2>Lastest Customers</h2>
                 <table class="show-table" >
                     <thead>
                         <tr>
                             <th></th>
                             <th>ID</th>
-                            <th>Full Name</th>
+                            <th>User</th>
                             <th>Product</th>
+                            <th>Full Name</th>
+                            
                             <th>Document</th>
                             <th>Address</th>
                             <th>Contact</th>
@@ -48,7 +49,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                            $customers = listElements($db, 'clientes', true); 
+                            $customers = customers($db); 
                             if(! empty($customers)):
                                 while($customer = mysqli_fetch_assoc($customers)):
                         ?>
@@ -57,8 +58,9 @@
                                         <a href="customer.php?id=<?=$customer['id'];?>">Details</a></td>
                                     </td>
                                     <td><?=$customer['id']?></td>
-                                    <td><?=$customer['nombre']?> <?=$customer['apellidos']?></td>
+                                    <td><?=$customer['usuario']?></td>
                                     <td><?=$customer['producto']?></td>
+                                    <td><?=$customer['nombre']?> <?=$customer['apellidos']?></td>
                                     <td><?=$customer['documento']?></td>
                                     <td><?=$customer['direccion']?></td>
                                     <td><?=$customer['telefono']?></td>
@@ -69,16 +71,7 @@
 
                     </tbody>
                 </table>
-                <div class="buttons button-see">
-                    <ul class="buttons-container see">
-                        <li class="btn">
-                            <a class="add" href="all-customers.php">
-                                <p>See More</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
+                
             </div>
 
         </div>

@@ -1,9 +1,8 @@
 <?php require_once('includes/headerPanel.php'); ?>
 
 <?php 
-    $product = product($db, $_GET['id']);
-    $existe = productExist($db, $_GET['id']);
-    var_dump($existe);
+    $product = element($db, $_GET['id'], 'productos');
+    $existe = elementExist($db, $_GET['id'], 'productos');
     ?>
     
 

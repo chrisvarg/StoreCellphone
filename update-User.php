@@ -1,8 +1,8 @@
 <?php require_once('includes/headerPanel.php'); ?>
 
 <?php 
-    $user = user($db, $_GET['id']);
-    $existe = userExist($db, $_GET['id']);
+    $user = element($db, $_GET['id'], 'usuarios');
+    $existe = elementExist($db, $_GET['id'], 'usuarios');
     
     ?>
     

@@ -36,7 +36,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $products = listProducts($db);
+                        <?php $products = listElements($db, 'productos');
                         
                             if(!empty($products)) :
                                 while($product = mysqli_fetch_assoc($products)): 

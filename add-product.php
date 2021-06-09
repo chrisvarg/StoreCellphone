@@ -12,19 +12,19 @@
                 <?php endif; ?>
             </div>
             
+            <div class="alert alert-update">
+                <?php 
+                    if(isset($_SESSION['complete'])) :
+                        echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
+                    <?php elseif (isset($_SESSION['errorsProducts']['save'])) :
+                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errorsProducts']['save']}</div>";?>
+                    <?php endif; ?>
+            </div>
             <div class="element-container element-user">
 
                 <div class="form-container ">
 
                     <form action="save-Product.php" method="POST" enctype="multipart/form-data">
-                    <div class="alert alert-update">
-                        <?php 
-                            if(isset($_SESSION['complete'])) :
-                                echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
-                            <?php elseif (isset($_SESSION['errors']['general'])) :
-                                echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
-                            <?php endif; ?>
-                    </div>
                         <!-- NAME -->
                         <div class="form-items">
                             <label for="nombre">Name</label><br>

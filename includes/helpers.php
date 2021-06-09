@@ -120,56 +120,26 @@ function redirect()
     }
 }
 
-function listProducts($db, $limit = null)
-{
-    /**
-     * Consulta la lista de los productos registrados
-     * segundo parametro limita a 10, si es true
-     */
-    $sql = "SELECT * FROM productos ORDER BY id ";
 
-    if($limit){
-        $sql .= "DESC LIMIT 2";
-    }
-
-    $products = mysqli_query($db, $sql);
+function elementExist($db, $id, $table){
     
-    $result = [];
-
-    if( $products && mysqli_num_rows($products) >= 1){
-        $result = $products;
-    }
-    return $result;
-}
-
-function product($db, $id)
-{
-    /**
-     * Consulta la lista de los productos registrados
-     * segundo parametro limita a 10, si es true
-     *
-     * 
-    * Puede servir para mostrar en el index*/
-
-    $sql = "SELECT * FROM productos WHERE id = '{$id}';";
-    $products = mysqli_query($db, $sql);
-    
-    $result = [];
-    if( $products && mysqli_num_rows($products) >= 1){
-        $result = mysqli_fetch_assoc($products);
-
-    }
-    return $result;
-}
-
-function productExist($db, $id){
-    $product = product($db, $id);
-    if (! isset($product['id'])) {
-        header('Location: products.php');
+    $element = element($db, $id, $table);
+    if (! isset($element['id'])) {
+        switch (! isset($element['id'])) {
+            case $table == 'clientes':
+                return header('Location: customers.php');
+                break;
+            case $table == 'usuarios':
+                return header('Location: users.php');
+                break;
+            case $table == 'productos':
+                return  header('Location: products.php');
+                break;
+            
+        }
+        // header('Location: products.php');
     }
 }
-
-
 
 function lockPosition()
 {
@@ -209,48 +179,44 @@ function remove($db, $idGet, $valor, $tabla)
     return $result;
 }
 
-function listCustomers($db, $limit = null)
+function userRestrictions($position) {
+    if ($position == 'employed') {
+        return header('Location: admin.php');
+        // exit();
+    }
+}
+
+function listElements($db, $table, $limit = null)
 {
     /**
      * Consulta la lista de los productos registrados
      * segundo parametro limita a 10, si es true
      */
-    $sql = "SELECT * FROM clientes ORDER BY id ";
+
+    if($table == 'clientes') {
+        $sql = "SELECT c.*, u.nombre AS 'usuarioNombre', u.apellidos AS 'usuarioApellidos', p.nombre AS 'producto'
+        FROM $table c
+        INNER JOIN productos p ON c.id_producto = p.id
+        INNER JOIN usuarios u ON c.id_usuario = u.id 
+        ORDER BY id ";
+    }else {
+        $sql = "SELECT * FROM $table ORDER BY id ";
+    }
 
     if($limit){
         $sql .= "DESC LIMIT 2";
     }
 
-    $customers = mysqli_query($db, $sql);
+    $element = mysqli_query($db, $sql);
     $result = [];
 
-    if( $customers && mysqli_num_rows($customers) >= 1){
-        $result = $customers;
-    }
-    return $result;
-}
-function listUsers($db, $limit = null)
-{
-    /**
-     * Consulta la lista de los usuarios registrados
-     * segundo parametro limita a 10, si es true
-     */
-    $sql = "SELECT * FROM usuarios ORDER BY id ";
-
-    if($limit){
-        $sql .= "DESC LIMIT 2";
-    }
-
-    $users = mysqli_query($db, $sql);
-    $result = [];
-
-    if( $users && mysqli_num_rows($users) >= 1){
-        $result = $users;
+    if( $element && mysqli_num_rows($element) >= 1){
+        $result = $element;
     }
     return $result;
 }
 
-function user($db, $id)
+function element($db, $id, $table)
 {
     /**
      * Consulta la lista de los productos registrados
@@ -258,27 +224,41 @@ function user($db, $id)
      *
      * 
     * Puede servir para mostrar en el index*/
-
-    $sql = "SELECT * FROM usuarios WHERE id = '{$id}';";
-    $usuario = mysqli_query($db, $sql);
+    if($table == 'clientes'){
+        $sql = "SELECT c.*, u.nombre AS 'usuarioNombre', u.apellidos AS 'usuarioApellidos', p.nombre AS 'producto'
+            FROM clientes c
+            INNER JOIN productos p ON c.id_producto = p.id
+            INNER JOIN usuarios u ON c.id_usuario = u.id 
+            WHERE c.id = '{$id}';";
+    } else {
+        $sql = "SELECT * FROM $table WHERE id = '{$id}';";
+    }
+    $element = mysqli_query($db, $sql);
     
     $result = [];
-    if( $usuario && mysqli_num_rows($usuario) >= 1){
-        $result = mysqli_fetch_assoc($usuario);
+    if( $element && mysqli_num_rows($element) >= 1){
+        $result = mysqli_fetch_assoc($element);
     }
     return $result;
 }
 
-function UserExist($db, $id){
-    $user = user($db, $id);
-    if (! isset($user['id'])) {
-        header('Location: users.php');
+function customers($db, $limit = null)
+{
+    $sql = "SELECT c.*, u.nombre AS 'usuario', p.nombre AS 'producto'
+            FROM clientes c
+            INNER JOIN productos p ON c.id_producto = p.id
+            INNER JOIN usuarios u ON c.id_usuario = u.id 
+            ORDER BY id ";
+    
+    if($limit){
+        $sql .= "DESC LIMIT 10;";
     }
-}
+    $element = mysqli_query($db, $sql);
 
-function userRestrictions($position) {
-    if ($position == 'employed') {
-        return header('Location: admin.php');
-        // exit();
+    $result = [];
+    if( $element && mysqli_num_rows($element) >= 1){
+        $result = $element;
+        return $result;
     }
 }
+// $clientes = clientes($db);

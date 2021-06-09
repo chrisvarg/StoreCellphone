@@ -2,12 +2,6 @@
 <?php 
     $user = $_SESSION['user']; // comprueba el usuario
     userRestrictions($user['position']); // restringe al usuario segun su position
-    
-    // consulta el usuario que llega por get
-    $userCurrent = user($db, $_GET['id']);
-    // demuestra si el usuario existe 
-    $existe = userExist($db, $_GET['id']);
-    
 ?>
 <?php require_once('includes/sidebarPanel.php') ?>
 <pre>
@@ -21,18 +15,18 @@
                 <?php endif; ?>
             </div>
             
+            <div class="alert alert-update">
+                <?php 
+                if(isset($_SESSION['complete'])) :
+                    echo "<div class='alert alert-complete'>{$_SESSION['complete']}</div>";?>
+                <?php elseif(isset($_SESSION['errors']['general'])):
+                    echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
+                <?php endif; ?>
+            </div>
             <div class="element-container element-user">
 
                 <div class="form-container ">
 
-                        <div class="alert">
-                            <?php 
-                            if(isset($_SESSION['complete'])) :
-                                echo "<div class='alert alert-complete'>{$_SESSION['complete']}</div>";?>
-                            <?php elseif(isset($_SESSION['errors']['general'])):
-                                echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
-                            <?php endif; ?>
-                        </div>
                     <form action="save-user.php" method="POST" enctype="multipart/form-data">
                         <!-- NAME -->
                         <div class="form-items name">

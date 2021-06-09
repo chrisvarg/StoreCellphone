@@ -32,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $products = listProducts($db, true);
+                        <?php $products = listElements($db, 'productos' ,true);
                         // mysqli_num_rows()
                             if(!empty($products)) :
                                 while($product = mysqli_fetch_assoc($products)): 
