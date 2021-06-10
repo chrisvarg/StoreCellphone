@@ -1,4 +1,17 @@
 <?php require_once('includes/header.php') ?>
+<?php require_once('includes/helpers.php') ?>
+<?php require_once('includes/conexion.php') ?>
+<!-- <pre> -->
+<?php 
+
+// $products = listElements($db, 'productos');
+// if (! empty($products)) {
+//     while ($product = mysqli_fetch_assoc($products)){
+//         var_dump($product);
+//     }
+// }
+// die();
+?>
         <!-- MAIN -->
 <main class="site-content">
     <!-- PORTADA -->
@@ -49,44 +62,29 @@
     <div class="products-site">
         <div class="products-container">
             <!-- Unidad products -->
-            <div class="products">
-                <!-- name phone -->
-                <p class="products-name">iPhone 12 Mini 64GB 4G</p>
-                <!-- image phone -->
-                <figure class="products-photo">
-                    <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
-                </figure>
-                <!-- price phone -->
-                <p class="products-price">$3.746.960</p>
-                <!-- botton buy -->
-                <input class="btn btn-buy" type="button" value="Buy Now">
-            </div>
-            <div class="products">
-                <p class="products-name">iPhone 12 Mini 64GB 4G</p>
-                <figure class="products-photo">
-                    <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
-                </figure>
-                <p class="products-price">$3.746.960</p>
-                <input class="btn btn-buy"  type="button" value="Buy Now">
-            </div>
-            <div class="products">
-                <p class="products-name">iPhone 12 Mini 64GB 4G</p>
-                <figure class="products-photo">
-                    <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
-                </figure>
-                <p class="products-price">$3.746.960</p>
-                <input class="btn btn-buy" type="button" value="Buy Now">
-            </div>
+            <?php 
 
-            <div class="products">
-                <p class="products-name">iPhone 12 Mini 64GB 4G</p>
-                <figure class="products-photo">
-                    <img src="./assets/img/iphone12-red-1-lg-1@3x.png" alt="">
-                </figure>
-                <p class="products-price">$3.746.960</p>
-                <input class="btn btn-buy" type="button" value="Buy Now">
-            </div>
-
+                $products = listElements($db, 'productos');
+                if (! empty($products)):
+                    while ($product = mysqli_fetch_assoc($products)):
+                        // var_dump($product);
+                ?>
+                        <div class="products">
+                            
+                            <!-- name phone -->
+                            <p class="products-name"><?=$product['nombre']?></p>
+                            <!-- image phone -->
+                            <figure class="products-photo">
+                                <img src="./products/<?=$product['imagen']?>" alt="">
+                            </figure>
+                            <!-- price phone -->
+                            <p class="products-price">$ <?=number_format($product['precio'], 0, ',', '.')?></p>
+                            <!-- botton buy -->
+                            <input class="btn btn-buy" type="button" value="Buy Now">
+                        </div>
+                    <?php endwhile;?>
+                <?php endif;?>
+                
         </div>
     </div>
 </main>

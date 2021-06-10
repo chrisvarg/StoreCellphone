@@ -21,7 +21,7 @@
             </div>
             
             <div class="buttons">
-                <ul class="buttons-container">
+                <ul class="buttons-container btn-add">
                     <li class="btn">
                         <a class="add" href="add-customer.php">
                             <span class="material-icons-round">add_circle</span>

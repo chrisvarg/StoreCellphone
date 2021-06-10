@@ -18,6 +18,7 @@ h2 {
 span {
     margin-right: .5rem;
     font-weight: 300;
+    text-transform: capitalize;
 }
 
 /* HEADER */
@@ -253,6 +254,7 @@ span {
 }
 
 .prices .price-text {
+    text-transform: capitalize;
     width: 85.6%;
     margin: 0;
     margin-top: 1.5rem;
@@ -270,6 +272,7 @@ span {
 
 .buttons-container{
     display: flex;
+    justify-content: center;
     list-style: none;
     height: 100%;
 }
@@ -291,6 +294,10 @@ span {
     border-radius: 2rem;
     box-shadow: 0px 1px 1px #404040;
     box-shadow: 0 0 1px rgba(0, 0, 0, .3),0 3px rgba(0, 0, 0, .3), 0 0 1px #404040 inset, 0 -2px 7px rgba(0, 0, 0, .25) inset;
+}
+
+.btn-add {
+    justify-content: flex-start;
 }
 
 .add {
@@ -348,6 +355,7 @@ span {
 .show-table {
     width: 100%;
     font-size: 1.4rem;
+    text-transform: capitalize;
 }
 
 .show-table th {
@@ -424,6 +432,7 @@ span {
 .form-items input[type="files"],
 .form-items input[type="password"] {
     padding-left: 8px;
+    text-transform: capitalize;
 }
 
 .form-items input[type="file"]{
@@ -513,6 +522,11 @@ form .update-description {
 .information h4 {
     margin-top: 1.5rem;
 }
+
+.information .email {
+    text-transform: lowercase;
+}
+
 .information p {
     margin-bottom: 1.5rem;
 }

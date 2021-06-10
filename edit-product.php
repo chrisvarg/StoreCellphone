@@ -4,21 +4,15 @@ if(isset($_POST)) {
     require_once('includes/conexion.php');
 
     // VERIFCAR SI LOS DATOS ESTA LLEGANDO
-    $name = $_POST['nombre'] ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
-    $brand = $_POST['marca'] ? mysqli_real_escape_string($db, $_POST['marca']) : false;
-    $price = $_POST['precio'] ? (int) mysqli_real_escape_string($db, $_POST['precio']) : false;
+    $name = $_POST['name'] ? mysqli_real_escape_string($db, $_POST['name']) : false;
+    $brand = $_POST['brand'] ? mysqli_real_escape_string($db, $_POST['brand']) : false;
+    $price = $_POST['price'] ? (int) mysqli_real_escape_string($db, $_POST['price']) : false;
     $stock = $_POST['stock'] ? intval(mysqli_real_escape_string($db, $_POST['stock'])) : false;
     $description = $_POST['description'] ? mysqli_real_escape_string($db, $_POST['description']) : false;
-    $image = $_FILES['imagen'];
+    $image = $_FILES['image'];
     $nameImageCurrent = $_POST['nameImage'];
     
-    $idcurrent =  $_GET['id'];
-
-    // echo '<pre>';
-    // var_dump($_POST);
-    // echo '<br>';
-    // var_dump($image);
-    // die();
+    $idCurrent =  $_GET['id'];
 
     // ERRORES
     $errors = [];
@@ -36,20 +30,20 @@ if(isset($_POST)) {
 
     // VALIDATION MARCA
     if ((! empty($brand)) && (! is_numeric($brand))) {
-        $validMarca = true;
+        $validBrand = true;
 
     } else {
-        $validMarca = false;
-        $errors['marca'] = 'Invalid Brand';
+        $validBrand = false;
+        $errors['brand'] = 'Invalid Brand';
     }
 
     // VALIDACIÓN PRECIO
     if ((! empty($price)) && (is_int($price)) && filter_var($price, FILTER_VALIDATE_INT)) {
-        $validPrecio = true;
+        $validPrice = true;
 
     } else {
-        $validPrecio = false;
-        $errors['precio'] = 'Invalid Price';
+        $validPrice = false;
+        $errors['price'] = 'Invalid Price';
     }
 
     // VALIDACIÓN IMAGEN
@@ -95,7 +89,8 @@ if(isset($_POST)) {
          * son los mis que entran por GET
          */
         $sql = "SELECT * FROM productos
-                WHERE id = '{$idcurrent}';";
+                WHERE id = '{$idCurrent}';";
+
         $oldProduct = mysqli_query($db, $sql);
         $oldProduct = mysqli_fetch_assoc($oldProduct);
     
@@ -111,20 +106,11 @@ if(isset($_POST)) {
         $issetProduct = mysqli_fetch_all($issetname);
         
 
-
-
+        // comprobar imagen
         if ($image['name']) {
             // eliminamos la imagen anterior
             unlink($imagesProducts . $oldProduct['imagen']);
             
-            // echo '<pre>';
-            
-            // var_dump($image['name']);
-            // echo '<br>';
-            // var_dump(count($issetUser));
-            // die();
-
-
             /** 
              * Crea una nombres aleatorios para las imagenes a subir
              * md5 encripta y da el nombre uniqid genera un id unico
@@ -150,7 +136,7 @@ if(isset($_POST)) {
                     description = '{$description}',
                     imagen = '{$nameImagesProducts}',
                     stock = '{$stock}'
-                    WHERE id = '{$idcurrent}';";
+                    WHERE id = '{$idCurrent}';";
 
             $update = mysqli_query($db, $sql);
 
@@ -166,13 +152,13 @@ if(isset($_POST)) {
             description = '{$description}',
             imagen = '{$nameImagesProducts}',
             stock = '{$stock}'
-            WHERE id = '{$idcurrent}';";
+            WHERE id = '{$idCurrent}';";
 
             $update = mysqli_query($db, $sql);
             
         }else {
-            $_SESSION['errorsProducts']['save'] = 'Product exist';
-            header("Location: update-product.php?id={$idcurrent}");
+            $_SESSION['errors']['general'] = 'Product exist';
+            header("Location: update-product.php?id={$idCurrent}");
             exit();
         }
 
@@ -181,16 +167,14 @@ if(isset($_POST)) {
         } 
 
         if (! $update) {
-            $_SESSION['errorsProducts']['save'] = 'Save failed';
+            $_SESSION['errors']['general'] = 'Save failed';
         } 
         
         // ERRORES O COMPLETE
     } else {
-        $_SESSION['errorsProducts'] = $errors;
-        header("Location: update-product.php?id={$idcurrent}");
+        $_SESSION['errors'] = $errors;
+        header("Location: update-product.php?id={$idCurrent}");
         exit();
     }
 }
-// echo 'Salio';
-// exit();
-header("Location: product.php?id={$idcurrent}");
+header("Location: product.php?id={$idCurrent}");

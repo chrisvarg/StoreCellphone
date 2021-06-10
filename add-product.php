@@ -8,7 +8,6 @@
             <div class="session-text">
                 <?php if(isset($_SESSION['user'])):  ?>
                     <h2>Add Products</h2>
-
                 <?php endif; ?>
             </div>
             
@@ -16,8 +15,8 @@
                 <?php 
                     if(isset($_SESSION['complete'])) :
                         echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
-                    <?php elseif (isset($_SESSION['errorsProducts']['save'])) :
-                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errorsProducts']['save']}</div>";?>
+                    <?php elseif (isset($_SESSION['errors']['general'])) :
+                        echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
                     <?php endif; ?>
             </div>
             <div class="element-container element-user">
@@ -27,38 +26,38 @@
                     <form action="save-Product.php" method="POST" enctype="multipart/form-data">
                         <!-- NAME -->
                         <div class="form-items">
-                            <label for="nombre">Name</label><br>
-                            <?php echo isset($_SESSION['errorsProducts']) ? showErrors($_SESSION['errorsProducts'], 'name') : '' ;?>
+                            <label for="name">Name</label><br>
+                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'name') : '' ;?>
 
-                            <input type="text" name="nombre" autofocus="autofocus""> <br/>
+                            <input type="text" name="name" autofocus="autofocus""> <br/>
                         </div>
 
                         <!-- BRAND -->
                         <div class="form-items">
-                            <label for="marca" >Brand</label><br>
-                            <?php echo isset($_SESSION['errorsProducts']) ? showErrors($_SESSION['errorsProducts'], 'marca') : '' ;?>
+                            <label for="brand" >Brand</label><br>
+                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'brand') : '' ;?>
 
-                            <input type="text" name="marca" autofocus="autofocus"">
+                            <input type="text" name="brand" autofocus="autofocus"">
                         </div>
 
                         <!-- PRICE -->
                         <div class="form-items">
-                            <label for="precio" >Price</label><br>
-                            <?php echo isset($_SESSION['errorsProducts']) ? showErrors($_SESSION['errorsProducts'], 'precio') : '' ;?>
+                            <label for="price" >Price</label><br>
+                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'price') : '' ;?>
 
-                            <input type="number" name="precio" autofocus="autofocus"">
+                            <input type="number" name="price" autofocus="autofocus"">
                         </div>
 
                         <!-- IMAGE -->
                         <div class="form-items">
-                            <label for="imagen">Image</label><br>
-                            <input type="file" name="imagen" required="required">
+                            <label for="image">Image</label><br>
+                            <input type="file" name="image" required="required">
                         </div>
             
                         <!-- STOCK -->
                         <div class="form-items">
                             <label for="stock" >Stock</label><br>
-                            <?php echo isset($_SESSION['errorsProducts']) ? showErrors($_SESSION['errorsProducts'], 'stock') : '' ;?>
+                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'stock') : '' ;?>
                             
                             <input type="number" name="stock" autofocus="autofocus"" >
                         </div>
@@ -66,7 +65,7 @@
                         <!-- DECRIPTION -->
                         <div class="form-items update-description">
                             <label for="description" >Description</label><br>
-                            <?php echo isset($_SESSION['errorsProducts']) ? showErrors($_SESSION['errorsProducts'], 'description') : '' ;?>
+                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'description') : '' ;?>
 
                             <textarea name="description" id="" cols="30" rows="10"></textarea>
                         </div>

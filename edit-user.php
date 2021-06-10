@@ -195,20 +195,16 @@ if(isset($_POST)) {
 
         if ($update) {
             $_SESSION['complete'] = 'Update completed';
-        } 
-
-        if (! $update) {
+        } elseif (! $update) {
             $_SESSION['errorsProducts']['save'] = 'Save failed';
-            echo 'No guardo';
-            die();
+            
         } 
         
         
         // ERRORES O COMPLETE
     } else {
         $_SESSION['errorsProducts'] = $errors;
-        var_dump($_SESSION['errorsProducts']);
-        die();
+        
         header("Location: update-user.php?id={$idcurrent}");
         exit();
     }

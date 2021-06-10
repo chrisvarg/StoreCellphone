@@ -1,7 +1,7 @@
 <?php require_once('includes/headerPanel.php') ?>
 <?php 
-    $user = $_SESSION['user']; // comprueba el usuario
-    userRestrictions($user['position']); // restringe al usuario segun su position
+    $userCurrent = $_SESSION['user']; // comprueba el usuario
+    userRestrictions($userCurrent['position']); // restringe al usuario segun su position
 ?>
 <?php require_once('includes/sidebarPanel.php') ?>
 <pre>
@@ -30,7 +30,7 @@
                     <form action="save-user.php" method="POST" enctype="multipart/form-data">
                         <!-- NAME -->
                         <div class="form-items name">
-                            <label for="nombre">Name</label> <br/>
+                            <label for="name">Name</label> <br/>
                             <?php
                                 //mostrar error name 
                                 echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'name') : '';
@@ -39,7 +39,7 @@
                         </div>
                         <!-- LAST NAME -->
                         <div class="form-items lastname">
-                            <label for="apellidos" >Last Name</label><br>
+                            <label for="lastname" >Last Name</label><br>
                             <?php
                                 //mostrar error lastname 
                                 echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'lastname') : '';

@@ -2,9 +2,9 @@
 <pre>
 <?php 
     $cliente = element($db, $_GET['id'], 'clientes');
-    // var_dump($cliente);
-    // die();
     $existe = elementExist($db, $_GET['id'], 'clientes');
+    $userCurrent = $_SESSION['user'];
+
 ?>
 </pre>
 <?php require_once('includes/sidebarPanel.php'); ?>
@@ -37,7 +37,7 @@
                     <div class="information dates element-text__date">
                         <h4>Id: <span><?=$cliente['id']?></span></h4>
                         <h4>Full Name: <span><?=$cliente['nombre']?> <?=$cliente['apellidos']?></span></h4>
-                        <h4>Product: <span><?=$cliente['usuarioNombre']?> <?=$cliente['usuarioApellidos']?></span></h4>
+                        <h4>Product: <span><?=$cliente['producto']?></span></h4>
                         <h4>Document: <span><?=number_format($cliente['documento'], 0, ',', '.')?></span></h4>
                         <h4>Address: <span><?=$cliente['direccion']?></span></h4>
                         <h4>Contact: <span><?=$cliente['telefono']?></span></h4>
@@ -47,15 +47,18 @@
             </div>
             <div class="buttons buttons-elements">
                 <ul class="buttons-container ">
-                    <li class="btn">
-                        <a class="remove" href="remove-product.php?id=<?=$cliente['id']?>">
-                            <span class="material-icons-round">add_circle</span>
-                            <p>Remove</p>
-                        </a>
-                    </li>
+                    <?php if ($userCurrent['position'] == 'boss'): ?> 
+                            <li class="btn">
+                                <a class="remove" href="remove-product.php?id=<?=$product['id']?>">
+                                    <span class="material-icons-round">add_circle</span>
+                                    <p>Remove</p>
+                                </a>
+                            </li>
+                                
+                    <?php endif; ?>
 
                     <li class="btn">
-                        <a class="update" href="update-product.php?id=<?=$cliente['id']?>">
+                        <a class="update" href="update-customer.php?id=<?=$cliente['id']?>">
                             <span class="material-icons-round">add_circle</span>
                             <p>Update</p>
                         </a>

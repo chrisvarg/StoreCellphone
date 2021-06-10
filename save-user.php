@@ -25,12 +25,13 @@ if(isset($_POST)){
     $email = isset($_POST['email']) ? mysqli_escape_string($db, trim($_POST['email'])) : false;
     $password = isset($_POST['password']) ? mysqli_escape_string($db, $_POST['password']) : false;
 
+ 
     // ARRAY DE ERRORES
     $errors = [];
 
     // VERIFICAR LOS DATOS QUE LLEGAN
 
-    // validación nombre
+        // validación nombre
     if ((! empty($name)) && (! is_numeric($name)) && (! preg_match('/[0-9]/', $name))) {
         $validName = true;
     } else {

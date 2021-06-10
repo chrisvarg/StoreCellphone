@@ -36,9 +36,9 @@
                         <nav class="nav-menu">
                             <ul>
                                 <li class="nav-menu_items home"><a href="index.php">Home</a></li>
-                                <li class="nav-menu_items"><a href="">Store</a></li>
-                                <li class="nav-menu_items about"><a href="">About us</a></li>
-                                <li class="nav-menu_items contact"><a href="">Contact</a></li>
+                                <li class="nav-menu_items"><a href="store.php">Store</a></li>
+                                <li class="nav-menu_items about"><a href="about.php">About us</a></li>
+                                <li class="nav-menu_items contact"><a href="contact.php">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

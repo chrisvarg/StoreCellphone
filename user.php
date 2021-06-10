@@ -7,8 +7,7 @@
     // consulta el usuario que llega por get
     $userCurrent = element($db, $_GET['id'], 'usuarios');
     // demuestra si el usuario existe 
-    $existe = elementExist($db, $_GET['id'], 'usuarios');
-    
+    $exist = elementExist($db, $_GET['id'], 'usuarios');
 ?>
 
 <?php require_once('includes/sidebarPanel.php'); ?>
@@ -33,14 +32,9 @@
                 <div class="element-image">
                     <figure >
                         <img class="element-profile" src="./users/<?=$userCurrent['imagen']?>" alt="">
-                    </figure>
-                    <pre>
-                    <?php 
-                        // var_dump()
-                    ?>
-                    </pre>
-                    
+                    </figure>                    
                 </div>
+
                 <div class="session-text message element-text">
                     <div class="information dates element-text__date">
                         <h4>Id: <span><?=$userCurrent['id']?></span></h4>
@@ -48,7 +42,7 @@
                         <h4>Last Name: <span><?=$userCurrent['apellidos']?></span></h4>
                         <h4>Position: <span><?=$userCurrent['position']?></span></h4>
                         <h4>E-mail: <span><?=$userCurrent['email']?></span></h4>
-                        <h4>fecha: <span><?=$userCurrent['fecha']?></span></h4>
+                        <h4>Date: <span><?=$userCurrent['fecha']?></span></h4>
                     </div>    
                 </div>
             </div>

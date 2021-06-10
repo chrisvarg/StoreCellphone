@@ -8,12 +8,12 @@ if(isset($_POST)) {
     }
 
     // VERIFCAR SI LOS DATOS ESTA LLEGANDO
-    $name = $_POST['nombre'] ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
-    $brand = $_POST['marca'] ? mysqli_real_escape_string($db, $_POST['marca']) : false;
-    $price = $_POST['precio'] ? (int) mysqli_real_escape_string($db, $_POST['precio']) : false;
+    $name = $_POST['name'] ? mysqli_real_escape_string($db, $_POST['name']) : false;
+    $brand = $_POST['brand'] ? mysqli_real_escape_string($db, $_POST['brand']) : false;
+    $price = $_POST['price'] ? (int) mysqli_real_escape_string($db, $_POST['price']) : false;
     $stock = $_POST['stock'] ? intval(mysqli_real_escape_string($db, $_POST['stock'])) : false;
     $description = $_POST['description'] ? mysqli_real_escape_string($db, $_POST['description']) : false;
-    $image = $_FILES['imagen'];
+    $image = $_FILES['image'];
 
 
     // echo '<pre>';
@@ -37,20 +37,20 @@ if(isset($_POST)) {
 
     // VALIDATION MARCA
     if ((! empty($brand)) && (! is_numeric($brand))) {
-        $validMarca = true;
+        $validBrand = true;
 
     } else {
-        $validMarca = false;
-        $errors['marca'] = 'Invalid Brand';
+        $validBrand = false;
+        $errors['brand'] = 'Invalid Brand';
     }
 
     // VALIDACIÓN PRECIO
     if ((! empty($price)) && (is_int($price)) && filter_var($price, FILTER_VALIDATE_INT)) {
-        $validPrecio = true;
+        $validPrice = true;
 
     } else {
-        $validPrecio = false;
-        $errors['precio'] = 'Invalid Price';
+        $validPrice = false;
+        $errors['price'] = 'Invalid Price';
     }
 
     // VALIDACIÓN IMAGEN
@@ -125,18 +125,16 @@ if(isset($_POST)) {
                 echo "bien";
     
             } else {
-                $_SESSION['errorsProducts']['save'] = 'Save failed';
+                $_SESSION['errors']['general'] = 'Save failed';
             }
 
         }else {
-            $_SESSION['errorsProducts']['save'] = 'Product exist';
+            $_SESSION['errors']['general'] = 'Product exist';
         }
 
-        
-        
         // ERRORES O COMPLETE
     } else {
-        $_SESSION['errorsProducts'] = $errors;        
+        $_SESSION['errors'] = $errors;        
     }
 }
 header('Location: add-product.php');

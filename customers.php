@@ -1,16 +1,7 @@
 <?php require_once('includes/headerPanel.php')?>
-<pre>
+<!-- <pre> -->
 <?php 
-// $customers = clientes($db); 
-// if(! empty($customers)) {
-    
-//     while($customer = mysqli_fetch_assoc($customers)){
-//         var_dump($customer);
-//         echo '<br>';
-//     }
-    
-// }
-// die();
+
 ?>
 </pre>
 <?php require_once('includes/sidebarPanel.php')?>
@@ -21,7 +12,7 @@
             </div>
             
             <div class="buttons">
-                <ul class="buttons-container">
+                <ul class="buttons-container btn-add">
                     <li class="btn">
                         <a class="add" href="add-customer.php">
                             <span class="material-icons-round">add_circle</span>
@@ -51,7 +42,7 @@
                             $customers = listElements($db, 'clientes', true); 
                             if(! empty($customers)):
                                 while($customer = mysqli_fetch_assoc($customers)):
-                        ?>
+                        ?>  
                                 <tr>
                                     <td>
                                         <a href="customer.php?id=<?=$customer['id'];?>">Details</a></td>

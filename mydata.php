@@ -1,8 +1,8 @@
 <?php require_once('includes/headerPanel.php')?>
 <?php require_once('includes/sidebarPanel.php')?>
 
-<?php if ($user = $_SESSION['user']):?>
-    <?php $user = element($db, $user['id'], 'usuarios');?>
+<?php if ($userCurrent = $_SESSION['user']):?>
+    <?php $user = element($db, $userCurrent['id'], 'usuarios');?>
     <?php endif;?>
 
 <div class="session-container">
@@ -37,8 +37,8 @@
                         <h4>Name: <span><?=$user['nombre']?></span></h4>
                         <h4>Last Name: <span><?=$user['apellidos']?></span></h4>
                         <h4>Position: <span><?=$user['position']?></span></h4>
-                        <h4>E-mail: <span><?=$user['email']?></span></h4>
-                        <h4>fecha: <span><?=$user['fecha']?></span></h4>
+                        <h4>E-mail: <span class="email"><?=$user['email']?></span></h4>
+                        <h4>Date: <span><?=$user['fecha']?></span></h4>
                     </div>    
                 </div>
             </div>

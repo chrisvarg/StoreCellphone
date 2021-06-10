@@ -2,7 +2,7 @@
 
 <?php 
     $user = element($db, $_GET['id'], 'usuarios');
-    $existe = elementExist($db, $_GET['id'], 'usuarios');
+    $exist = elementExist($db, $_GET['id'], 'usuarios');
     
     ?>
     
@@ -48,7 +48,7 @@
                             <label for="lastname">Last Name</label> <br/>
                             <?php
                                 //mostrar error name 
-                                echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'name') : '';
+                                echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'lastname') : '';
                             ?>
                             <input type="text" name="lastname" value="<?=$user['apellidos'];?>" required="required"> <br/>
                         </div>
@@ -81,10 +81,8 @@
                         </div>
                         
                         <div class="button-container">
-                                
                             <div class="buttons button-see">
                                 <input class="button" type="submit" value="Continue">
-                                
                             </div>
                         </div>
                         

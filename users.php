@@ -1,7 +1,7 @@
 <?php require_once('includes/headerPanel.php'); ?>
 <?php 
-    $user = $_SESSION['user'];
-    userRestrictions($user['position']);
+    $userCurrent = $_SESSION['user'];
+    userRestrictions($userCurrent['position']);
 ?>
 <?php require_once('includes/sidebarPanel.php')?>
 
@@ -11,7 +11,7 @@
                     <h2>Users</h2>                    
             </div>
             <div class="buttons">
-                <ul class="buttons-container">
+                <ul class="buttons-container btn-add">
                     <li class="btn">
                         <a class="add" href="add-user.php">
                             <span class="material-icons-round">add_circle</span>

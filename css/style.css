@@ -228,10 +228,10 @@ p, label, input {
 }
 
 .products-photo {
-    width: 13.2rem;
-    min-width: 13.2rem;
-    height: 17.8rem;
-    min-height: 17.8rem;
+    width: 15rem;
+    min-width: 15rem;
+    height: 15rem;
+    min-height: 15rem;
     margin: 0 auto;
 }
 
