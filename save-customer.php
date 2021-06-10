@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST)) {
     
     require_once('includes/conexion.php');
@@ -18,87 +17,85 @@ if (isset($_POST)) {
     $contact = $_POST['contact'] ? (int)(mysqli_real_escape_string($db, $_POST['contact'])) : false;
     $email = $_POST['email'] ? mysqli_real_escape_string($db, trim($_POST['email'])) : false;
     
-
     // ARRAY DE ERRORES
     $errors = [];
 
     // VALIDAR LOS DATOS QUE LLEGAN
 
         // VALIDACIÓN NOMBRE
-        if ((! empty($name)) && (! is_numeric($name))) {
-            $validName = true;
-    
-        } else {
-            $validName = false;
-            $errors['name'] = 'Invalid Name';
-        }
-    
+    if ((! empty($name)) && (! is_numeric($name))) {
+        $validName = true;
+
+    } else {
+        $validName = false;
+        $errors['name'] = 'Invalid Name';
+    }
+
         // VALIDATION LASTNAME
-        if ((! empty($lastname)) && (! is_numeric($lastname))) {
-            $validLastname = true;
-    
-        } else {
-            $validLastname = false;
-            $errors['lastname'] = 'Invalid Last Name';
-        }
-    
+    if ((! empty($lastname)) && (! is_numeric($lastname))) {
+        $validLastname = true;
+
+    } else {
+        $validLastname = false;
+        $errors['lastname'] = 'Invalid Last Name';
+    }
+
         // VALIDACIÓN PRODUCTO
-        if ((! empty($idProduct)) && (is_int($idProduct)) && filter_var($idProduct, FILTER_VALIDATE_INT)) {
-            $validProduct = true;
-    
-        } else {
-            $validProduct = false;
-            $errors['product'] = 'Invalid Id Product';
-        }
+    if ((! empty($idProduct)) && (is_int($idProduct)) && filter_var($idProduct, FILTER_VALIDATE_INT)) {
+        $validProduct = true;
+
+    } else {
+        $validProduct = false;
+        $errors['product'] = 'Invalid Id Product';
+    }
         // VALIDACIÓN USUARIO
-        if ((! empty($idUser)) && (is_int($idUser)) && filter_var($idUser, FILTER_VALIDATE_INT)) {
-            $validUser = true;
-    
-        } else {
-            $validUser = false;
-            $errors['idUser'] = 'Invalid Id User';
-        }
+    if ((! empty($idUser)) && (is_int($idUser)) && filter_var($idUser, FILTER_VALIDATE_INT)) {
+        $validUser = true;
+
+    } else {
+        $validUser = false;
+        $errors['idUser'] = 'Invalid Id User';
+    }
 
         // VALIDATION DOCUMENTO
-        if ((! empty($document)) && (is_int($document)) && filter_var($document, FILTER_VALIDATE_INT)) {
-            $validDocument = true;
-    
-        } else {
-            $validDocument = false;
-            $errors['document'] = 'Invalid Document';
-        }
+    if ((! empty($document)) && (is_int($document)) && filter_var($document, FILTER_VALIDATE_INT)) {
+        $validDocument = true;
+
+    } else {
+        $validDocument = false;
+        $errors['document'] = 'Invalid Document';
+    }
 
         // VALIDATION DIRECCION
-        if ((! empty($address)) && (! is_numeric($address))) {
-            $validAddress = true;
-    
-        } else {
-            $validAddress = false;
-            $errors['address'] = 'Invalid Address';
-        }
+    if ((! empty($address)) && (! is_numeric($address))) {
+        $validAddress = true;
+
+    } else {
+        $validAddress = false;
+        $errors['address'] = 'Invalid Address';
+    }
 
         // VALIDATION CONTACT
-        if ((! empty($contact)) && (is_int($contact)) && filter_var($contact, FILTER_VALIDATE_INT)) {
-            $validContact = true;
-    
-        } else {
-            $validContact = false;
-            $errors['contact'] = 'Invalid Contact';
-        }
+    if ((! empty($contact)) && (is_int($contact)) && filter_var($contact, FILTER_VALIDATE_INT)) {
+        $validContact = true;
+
+    } else {
+        $validContact = false;
+        $errors['contact'] = 'Invalid Contact';
+    }
 
         // VALIDATION EMAIL
-        if ((! empty($email)) && (filter_var($email, FILTER_VALIDATE_EMAIL))) {
-            $validEmail = true;
-    
-        } else {
-            $validEmail = false;
-            $errors['email'] = 'Invalid Email';
-        }
+    if ((! empty($email)) && (filter_var($email, FILTER_VALIDATE_EMAIL))) {
+        $validEmail = true;
 
-        // VALIDAR CANTIDAD DE ERRORES
+    } else {
+        $validEmail = false;
+        $errors['email'] = 'Invalid Email';
+    }
+
+    // VALIDAR CANTIDAD DE ERRORES
     $customersSave = false;
     if (count($errors) == 0) {
-
         $customerSave = true;
 
         $sql = "INSERT INTO clientes
@@ -116,6 +113,5 @@ if (isset($_POST)) {
     } else {
         $_SESSION['errors'] = $errors;
     }
-
 }
 header('Location: add-customer.php');

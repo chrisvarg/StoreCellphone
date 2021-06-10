@@ -1,7 +1,4 @@
 <?php
-
-
-
 if(isset($_POST)){
     
     // CONEXIÓN BASE DE DATOS   
@@ -14,24 +11,13 @@ if(isset($_POST)){
     $lastname = isset($_POST['lastname']) ? mysqli_escape_string($db, $_POST['lastname']) : false;
     $position = isset($_POST['position']) ? mysqli_escape_string($db, $_POST['position']) : false;
     $email = isset($_POST['email']) ? mysqli_escape_string($db, trim($_POST['email'])) : false;
-    
     $image = $_FILES['imagen'];
-
     $nameImagesCurrent = $_POST['nameImage'];
-
-    // echo "<pre>";
-    // var_dump($_POST);
-    // echo "<br>";
-    // var_dump($image);
-    // echo "<br>";
-    // var_dump($_SESSION['user']);
-    // die();
 
     // ARRAY DE ERRORES
     $errors = [];
     
     // VERIFICAR LOS DATOS QUE LLEGAN
-
         // validación nombre
     if ((! empty($name)) && (! is_numeric($name)) && (! preg_match('/[0-9]/', $name))) {
         $validName = true;
@@ -64,14 +50,12 @@ if(isset($_POST)){
         $errors['email'] = "Invalid email";
     }
 
-
     // VALIDACIÓN IMAGEN
     if (! empty($image) && ($image['type'] == 'image/jpeg' || $image['type'] == 'image/png' || $image['type'] == 'image/gif' || $image['type'] == 'image/webp')) {
         $validImage = true;
     }else {
         $validImage = false;
     }
-
 
     // VALIDAR CUANTOS ERRORES SE PRESENTARON SINO SUBIR DB
     $userSave = false;
@@ -80,12 +64,10 @@ if(isset($_POST)){
         $user = $_SESSION['user'];
         $userSave = true;
 
-        
         $imagesProducts = './users/';
         if (!is_dir($imagesProducts)) {
             mkdir($imagesProducts, 07777);
         }
-
 
         // COMPROBAR SI EL EMAIL YA EXISTE EN LA BASE DE DATOS
         $sql = "SELECT * FROM usuarios
@@ -93,14 +75,8 @@ if(isset($_POST)){
 
         $issetEmail = mysqli_query($db, $sql);
         $issetUser = mysqli_fetch_assoc($issetEmail);
-        // echo '<pre>';
-        // var_dump($issetUser);
-        // die();
-
         
         if($issetUser['id'] == $user['id'] || empty($issetUser)) {
-
-
             if ($image['name']) {
                 /** Existe imagen
                  * Crea una nombres aleatorios para las imagenes a subir
@@ -114,26 +90,22 @@ if(isset($_POST)){
 
                  // ACTUALIZAR LOS DATOS EN LA BASE DE DATOS
                 // Consulta para subir los datos
+
             } else {
                 $nameImagesUser = $nameImagesCurrent;
-                // echo 'La misma';
-                // die();
             }
-            // echo 'No entro';
-            // die();
             
-            
-                $sql = "UPDATE usuarios SET
-                        nombre = '{$name}',
-                        apellidos = '{$lastname}',
-                        position = '{$position}',
-                        email = '{$email}',
-                        imagen = '{$nameImagesUser}'
-                        WHERE id = '{$user['id']}'";
-                // Subir los datos a la tabla usuarios db
+            $sql = "UPDATE usuarios SET
+                    nombre = '{$name}',
+                    apellidos = '{$lastname}',
+                    position = '{$position}',
+                    email = '{$email}',
+                    imagen = '{$nameImagesUser}'
+                    WHERE id = '{$user['id']}'";
+
+            // Subir los datos a la tabla usuarios db
             $insert = mysqli_query($db, $sql);
             
-
             if ($insert) {
                 
                 $_SESSION['user']['nombre'] = $name;
@@ -142,11 +114,9 @@ if(isset($_POST)){
                 $_SESSION['user']['email'] = $email;
                 $_SESSION['user']['imagen'] = $nameImagesUser;
                 
-    
                 $_SESSION['complete'] = "Successful upgrade";
             } else {
                 $_SESSION['errors']['general'] = "Update failed";
-                
             }
         } else {
             $_SESSION['errors']['general'] = "User exist";
@@ -155,6 +125,5 @@ if(isset($_POST)){
     } else {
         $_SESSION['errors'] = $errors;
     }
-    
 }
 header('Location: mydata.php');

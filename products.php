@@ -67,15 +67,9 @@
                             <p>See More</p>
                         </a>
                     </li>
-                    
                 </ul>
             </div>
+
         </div>
     </div>
 </main>
-
-<pre>
-    <?php //$products = listProducts($db); ?>
-    <?php //var_dump($products); ?>
-    
-</pre>

@@ -1,14 +1,10 @@
 <?php require_once('includes/headerPanel.php'); ?>
-<pre>
 <?php 
     $product = element($db, $_GET['id'], 'productos');
     $exist = elementExist($db, $_GET['id'], 'productos');
-
     $userCurrent = $_SESSION['user'];
 ?>
-</pre>
 <?php require_once('includes/sidebarPanel.php'); ?>
-
 
 <div class="session-container">
             <div class="session-text">
@@ -24,15 +20,14 @@
 
                 <?php endif; ?>        
             </div>
-            <div class="element-container">
-                
 
+            <div class="element-container">
                 <div class="element-image">
                     <figure>
                         <img src="./products/<?=$product['imagen']?>" alt="">
                     </figure>
-                    
                 </div>
+
                 <div class="session-text message element-text">
                     <div class="information dates element-text__date">
                         <h4>Id: <span><?=$product['id']?></span></h4>
@@ -45,6 +40,7 @@
                     </div>    
                 </div>
             </div>
+
             <div class="buttons buttons-elements">
                 <ul class="buttons-container ">
                     <?php if ($userCurrent['position'] == 'boss'): ?> 
@@ -55,7 +51,6 @@
                                 </a>
                             </li>
                     <?php endif; ?> 
-
                     <li class="btn">
                         <a class="update" href="update-product.php?id=<?=$product['id']?>">
                             <span class="material-icons-round">add_circle</span>
@@ -64,14 +59,7 @@
                     </li>
                 </ul>
             </div>
-            
         </div>
     </div>
     <?php eraserErrors();?>
 </main>
-
-<pre>
-    <?php //$products = listProducts($db); ?>
-    <?php //var_dump($products); ?>
-    
-</pre>

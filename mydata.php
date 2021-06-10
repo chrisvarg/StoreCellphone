@@ -1,9 +1,10 @@
 <?php require_once('includes/headerPanel.php')?>
 <?php require_once('includes/sidebarPanel.php')?>
-
-<?php if ($userCurrent = $_SESSION['user']):?>
-    <?php $user = element($db, $userCurrent['id'], 'usuarios');?>
-    <?php endif;?>
+<?php 
+if ($userCurrent = $_SESSION['user']) {
+    $user = element($db, $userCurrent['id'], 'usuarios');
+} 
+?>
 
 <div class="session-container">
             <div class="session-text">
@@ -18,19 +19,14 @@
                         echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
                     <?php endif; ?>
             </div>
+
             <div class="element-container element-user">
                 <div class="element-image">
                     <figure >
                         <img class="element-profile" src="./users/<?=$user['imagen']?>" alt="">
                     </figure>
-                    <pre>
-                    
-                    <?php 
-                        // var_dump($user);
-                        // die();
-                    ?>
-                    </pre>
                 </div>
+
                 <div class="session-text message element-text">
                     <div class="information dates element-text__date">
                         <h4>Id: <span><?=$user['id']?></span></h4>
@@ -44,9 +40,7 @@
             </div>
             
             <div class="form-container">
-                
                 <h2>Update Data</h2>
-
                 <form action="update-mydata.php" method="POST" enctype="multipart/form-data">
                     <?php 
                     if(isset($_SESSION['errors']['general'])) :
@@ -95,13 +89,10 @@
                     <div class="button-container">
                         <input class="button" type="submit" value="Update">
                     </div>
-                    
                 </form>
-                
                 <?php eraserErrors();?>
             </div>
             
-
         </div>
     </div>
 </main>

@@ -37,6 +37,7 @@ if(isset($_POST)){
              */
             header('Location: admin.php');
             exit();
+
         }else {
             // Si no existe datos de session crear una variable de error
             $_SESSION['error-login'] = 'Error al iniciar sessión';
@@ -49,5 +50,4 @@ if(isset($_POST)){
         exit;
     }
 }
-
 header('Location: signIn.php');

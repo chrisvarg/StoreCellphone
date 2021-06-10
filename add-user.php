@@ -4,14 +4,11 @@
     userRestrictions($userCurrent['position']); // restringe al usuario segun su position
 ?>
 <?php require_once('includes/sidebarPanel.php') ?>
-<pre>
-</pre>
 
 <div class="session-container">
             <div class="session-text">
                 <?php if(isset($_SESSION['user'])):  ?>
                     <h2>Add Users</h2>
-
                 <?php endif; ?>
             </div>
             
@@ -23,12 +20,12 @@
                     echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
                 <?php endif; ?>
             </div>
+
             <div class="element-container element-user">
-
                 <div class="form-container ">
-
                     <form action="save-user.php" method="POST" enctype="multipart/form-data">
-                        <!-- NAME -->
+                        
+                    <!-- NAME -->
                         <div class="form-items name">
                             <label for="name">Name</label> <br/>
                             <?php
@@ -37,6 +34,7 @@
                             ?>
                             <input type="text" name="name" > <br/>
                         </div>
+
                         <!-- LAST NAME -->
                         <div class="form-items lastname">
                             <label for="lastname" >Last Name</label><br>
@@ -46,6 +44,7 @@
                             ?>
                             <input type="text" name="lastname">
                         </div>
+
                         <!-- Position -->
                         <div class="form-items position">
                             <label for="position">Position</label><br>
@@ -73,7 +72,6 @@
                         <div class="button-container">
                             <input class="button" type="submit" value="Update">
                         </div>
-                        
                     </form>
                     <!-- aqui -->
                     <?php eraserErrors();?>

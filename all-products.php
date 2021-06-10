@@ -17,8 +17,6 @@
                             <p>Add</p>
                         </a>
                     </li>
-                    
-                    
                 </ul>
             </div>
             
@@ -53,7 +51,6 @@
                                                     <img src="./products/<?=$product['imagen']?>" alt="">
                                                 </figure>
                                             </a>
-                                            <!-- // -->
                                         </td>
                                         <td><?=$product['stock']. ' units'?></td>
                                     </tr>
@@ -64,13 +61,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </main>
-
-<pre>
-    <?php //$products = listProducts($db); ?>
-    <?php //var_dump($products); ?>
-    
-</pre>

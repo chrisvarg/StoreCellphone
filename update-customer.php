@@ -1,12 +1,9 @@
 <?php require_once('includes/headerPanel.php'); ?>
-
 <?php 
     $customer = element($db, $_GET['id'], 'clientes');
     $existe = elementExist($db, $_GET['id'], 'clientes');
     $user = $_SESSION['user'];
 ?>
-
-
 <?php require_once('includes/sidebarPanel.php'); ?>
 
 <div class="session-container">
@@ -21,10 +18,9 @@
             </div>
             
             <div class="customer-container customer-update">
-
                 <div class="form-container update-form">
-
                     <form action="edit-customer.php?id=<?=$customer['id']?>" method="POST" enctype="multipart/form-data">
+                        
                         <!-- NAME -->
                         <div class="form-items">
                             <label for="name">Name</label><br>
@@ -41,17 +37,16 @@
                             <input type="text" name="lastname" value="<?=$customer['apellidos']?>" autofocus="autofocus"">
                         </div>
 
+                        <!-- PRODUCT -->
                         <div class="form-items">
                             <label for="product" >Product</label><br>
                             <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'idcustomer') : '' ;?>
-
                             <select name="product">
                                 <?php
                                     $products = listElements($db, 'productos');
                                     if(! empty($products)) :
                                         while ($product = mysqli_fetch_assoc($products)):
                                 ?>          
-                                            
                                                 <option value="<?=$product['id']?>"><?=$product['nombre']?></option>
                                         <?php endwhile; ?>
                                     <?php else: ?>
@@ -59,7 +54,6 @@
                                     <?php endif; ?>
                             </select>
                             <input type="hidden" name="user" value="<?=$customer['id_usuario']?>">
-
                         </div>
             
                         <!-- STOCK -->
@@ -69,25 +63,25 @@
                             
                             <input type="number" name="document" value="<?=$customer['documento']?>" autofocus="autofocus"" >
                         </div>
-                        <!-- STOCK -->
+
+                        <!-- ADDRESS -->
                         <div class="form-items">
                             <label for="address" >Address</label><br>
                             <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'address') : '' ;?>
-                            
                             <input type="text" name="address" value="<?=$customer['direccion']?>" autofocus="autofocus"" >
                         </div>
-                        <!-- STOCK -->
+
+                        <!-- CONTACT -->
                         <div class="form-items">
                             <label for="contact" >Contact</label><br>
-                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'contact') : '' ;?>
-                            
+                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'contact') : '' ;?>                            
                             <input type="number" name="contact" value="<?=$customer['telefono']?>" autofocus="autofocus"" >
                         </div>
-                        <!-- STOCK -->
+
+                        <!-- EMIAL -->
                         <div class="form-items">
                             <label for="email" >E-mail</label><br>
-                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'email') : '' ;?>
-                            
+                            <?php echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'email') : '' ;?>                            
                             <input type="email" name="email" value="<?=$customer['email']?>" autofocus="autofocus"" >
                         </div>
 
@@ -97,21 +91,8 @@
                         
                     </form>
                     <!-- aqui -->
-                <?php eraserErrors();?>
+                    <?php eraserErrors();?>
                 </div>
-
-                <!-- <div class="customer-image update-image">
-                    <figure>
-                        <img src="./customers/<?=$customer['imagen']?>" alt="">
-                    </figure>
-                </div> -->
-                
-                
-            
-
             </div>
-
-        
-        </div>
     </div>
 </main>

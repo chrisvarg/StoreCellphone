@@ -15,12 +15,6 @@ if(isset($_POST)) {
     $description = $_POST['description'] ? mysqli_real_escape_string($db, $_POST['description']) : false;
     $image = $_FILES['image'];
 
-
-    // echo '<pre>';
-    // var_dump($_POST);
-    // echo '<br>';
-    // var_dump($image);
-    // die();
     // ERRORES
     $errors = [];
 
@@ -35,7 +29,7 @@ if(isset($_POST)) {
         $errors['name'] = 'Invalid Name';
     }
 
-    // VALIDATION MARCA
+        // VALIDATION MARCA
     if ((! empty($brand)) && (! is_numeric($brand))) {
         $validBrand = true;
 
@@ -44,7 +38,7 @@ if(isset($_POST)) {
         $errors['brand'] = 'Invalid Brand';
     }
 
-    // VALIDACIÓN PRECIO
+        // VALIDACIÓN PRECIO
     if ((! empty($price)) && (is_int($price)) && filter_var($price, FILTER_VALIDATE_INT)) {
         $validPrice = true;
 
@@ -53,7 +47,7 @@ if(isset($_POST)) {
         $errors['price'] = 'Invalid Price';
     }
 
-    // VALIDACIÓN IMAGEN
+        // VALIDACIÓN IMAGEN
     if (! empty($image) && ($image['type'] == 'image/jpeg' || $image['type'] == 'image/png' || $image['type'] == 'image/gif' || $image['type'] == 'image/webp')) {
         $validImage = true;
     }else {
@@ -61,7 +55,7 @@ if(isset($_POST)) {
         $validImage = false;
     }
 
-    // VALIDACION STOCK
+        // VALIDACION STOCK
     if ((! empty($stock)) && (is_int($stock))) {
         $validStock = true;
 
@@ -70,7 +64,7 @@ if(isset($_POST)) {
         $errors['stock'] = 'Invalid Stock ';
     }
 
-    // VALIDACION DESCRIPTION
+        // VALIDACION DESCRIPTION
     if ((! empty($description)) && (! is_numeric($description))) {
         $valiDescription = true;
 
@@ -82,7 +76,6 @@ if(isset($_POST)) {
     // VALIDAR CANTIDAD DE ERRORES
     $productSave = false;
     if (count($errors) == 0) {
-
         $productSave = true;
 
         // validación de la carpeta de las images
@@ -98,11 +91,9 @@ if(isset($_POST)) {
         $issetname = mysqli_query($db, $sql);
         $issetProduct = mysqli_fetch_assoc($issetname) ;
 
-        
+        // Validar si existe ya un producto exxistente
         if(empty($issetProduct)) {
-
             if ($validImage) {
-    
                 /** Existe imagen
                  * Crea una nombres aleatorios para las imagenes a subir
                  * md5 encripta y da el nombre uniqid genera un id unico
@@ -110,7 +101,6 @@ if(isset($_POST)) {
                 */
                 $nameImagesProducts = md5(uniqid(rand(), true)) . '.jpg';
                 move_uploaded_file($image['tmp_name'], $imagesProducts.$nameImagesProducts);
-    
     
                  // INSERTAR EL PRODUCTO A LA BASE DE DATOS
                 // Consulta para subir los datos

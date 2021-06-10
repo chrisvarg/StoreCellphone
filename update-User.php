@@ -1,18 +1,15 @@
 <?php require_once('includes/headerPanel.php'); ?>
-
 <?php 
     $user = element($db, $_GET['id'], 'usuarios');
     $exist = elementExist($db, $_GET['id'], 'usuarios');
     
-    ?>
-    
-
+?>
 <?php require_once('includes/sidebarPanel.php'); ?>
 
 <div class="session-container">
             <div class="session-text">
                 <?php if ($_SESSION['user']):?>
-                    <h2><?=$user['nombre']?></h2>
+                    <h2><?=$user['nombre']?> <?=$user['apellidos']?></h2>
                 <?php endif;?>
             </div>
             
@@ -21,9 +18,7 @@
             </div>
             
             <div class="product-container product-update">
-
                 <div class="form-container update-form">
-                    
                     <form action="edit-user.php?id=<?=$user['id']?>" method="POST" enctype="multipart/form-data">
                         
                         <?php 
@@ -52,14 +47,26 @@
                             ?>
                             <input type="text" name="lastname" value="<?=$user['apellidos'];?>" required="required"> <br/>
                         </div>
+
                         <!-- POSITION -->
                         <div class="form-items name">
-                            <label for="position">Position</label> <br/>
+                            <label for="position">Position</label> <br/>                            
                             <?php
                                 //mostrar error name 
-                                echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'name') : '';
+                                echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'position') : '';
                             ?>
-                            <input type="text" name="position" value="<?=$user['position'];?>" required="required"> <br/>
+                            <?php if ($user['position'] == 'boss'):?>
+                                    <select name="position">
+                                        <option value="employed"><?=ucfirst($user['position']);?></option>
+                                        <option value="employed">Employed</option>
+                                    </select>
+                                
+                                <?php elseif ($user['position'] == 'employed'):?>
+                                    <select name="position">
+                                        <option value="employed"><?=ucfirst($user['position']);?></option>
+                                        <option value="employed">Boss</option>
+                                    </select>
+                            <?php endif?>
                         </div>
 
                         <!-- EMAIL -->
@@ -67,7 +74,7 @@
                             <label for="email">E-mail</label> <br/>
                             <?php
                                 //mostrar error name 
-                                echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'name') : '';
+                                echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'email') : '';
                             ?>
                             <input type="email" name="email" value="<?=$user['email'];?>" required="required"> <br/>
                         </div>
@@ -77,24 +84,18 @@
                             <label for="image">Image</label> <br/>
                             <input type="file" name="image" value="<?=$user['imagen'];?>"> <br/>
                             <input type="hidden" name="nameImage" value="<?=$user['imagen']?>">
-
                         </div>
-                        
+
                         <div class="button-container">
                             <div class="buttons button-see">
                                 <input class="button" type="submit" value="Continue">
                             </div>
                         </div>
-                        
                     </form>
-
-                    
-                    <!-- aqui -->
-                    <?php eraserErrors();?>
+                        <!-- aqui -->
+                        <?php eraserErrors();?>
                 </div>
-                
             </div>
-
         
         </div>
     </div>

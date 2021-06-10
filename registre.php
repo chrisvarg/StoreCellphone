@@ -1,7 +1,5 @@
 <?php
 
-
-
 if(isset($_POST)){
     
     // CONEXIÓN BASE DE DATOS   
@@ -75,7 +73,6 @@ if(isset($_POST)){
     // VALIDAR CUANTOS ERRORES SE PRESENTARON SINO SUBIR DB
     $userSave = false;
     if (count($errors) == 0 ) {
-        
         $userSave = true;
 
         // CIFRAR LA CONTRASEÑA
@@ -86,7 +83,6 @@ if(isset($_POST)){
             */
         $securepassword = password_hash($password,PASSWORD_BCRYPT, ['cost=>4 ']);
 
-
         // INSERTAR EL USUARIO A LA BASE DE DATOS
             // consulta para subir los datos
         $sql = "INSERT INTO usuarios 
@@ -95,14 +91,13 @@ if(isset($_POST)){
         $insert = mysqli_query($db, $sql);
 
         if ($insert) {
-            $_SESSION['complete'] = "Registro completado exitosamente";
+            $_SESSION['complete'] = "Registration completed";
         } else {
-            $_SESSION['errors']['general'] = "Fallo al guardar";
+            $_SESSION['errors']['general'] = "Save Failed";
         }
 
     } else {
         $_SESSION['errors'] = $errors;
     }
-    
 }
 header('Location: signUp.php');

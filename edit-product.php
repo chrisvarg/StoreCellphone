@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_POST)) {
     require_once('includes/conexion.php');
 
@@ -11,14 +10,12 @@ if(isset($_POST)) {
     $description = $_POST['description'] ? mysqli_real_escape_string($db, $_POST['description']) : false;
     $image = $_FILES['image'];
     $nameImageCurrent = $_POST['nameImage'];
-    
     $idCurrent =  $_GET['id'];
 
     // ERRORES
     $errors = [];
 
     // VALIDAR LOS DATOS QUE LLEGAN
-
         // VALIDACIÓN NOMBRE
     if ((! empty($name)) && (! is_numeric($name))) {
         $validName = true;
@@ -28,7 +25,7 @@ if(isset($_POST)) {
         $errors['name'] = 'Invalid Name';
     }
 
-    // VALIDATION MARCA
+        // VALIDATION MARCA
     if ((! empty($brand)) && (! is_numeric($brand))) {
         $validBrand = true;
 
@@ -37,7 +34,7 @@ if(isset($_POST)) {
         $errors['brand'] = 'Invalid Brand';
     }
 
-    // VALIDACIÓN PRECIO
+        // VALIDACIÓN PRECIO
     if ((! empty($price)) && (is_int($price)) && filter_var($price, FILTER_VALIDATE_INT)) {
         $validPrice = true;
 
@@ -46,14 +43,14 @@ if(isset($_POST)) {
         $errors['price'] = 'Invalid Price';
     }
 
-    // VALIDACIÓN IMAGEN
+        // VALIDACIÓN IMAGEN
     if (! empty($image) && ($image['type'] == 'image/jpeg' || $image['type'] == 'image/png' || $image['type'] == 'image/gif' || $image['type'] == 'image/webp')) {
         $validImage = true;
     }else {
         $validImage = false;
     }
 
-    // VALIDACION STOCK
+        // VALIDACION STOCK
     if ((! empty($stock)) && (is_int($stock))) {
         $validStock = true;
 
@@ -62,7 +59,7 @@ if(isset($_POST)) {
         $errors['stock'] = 'Invalid Stock ';
     }
 
-    // VALIDACION DESCRIPTION
+        // VALIDACION DESCRIPTION
     if ((! empty($description)) && (! is_numeric($description))) {
         $valiDescription = true;
 
@@ -71,8 +68,7 @@ if(isset($_POST)) {
         $errors['description'] = 'Empty Description';
     }
 
-    
-    // VALIDAR CANTIDAD DE ERRORES
+        // VALIDAR CANTIDAD DE ERRORES
     $productSave = false;
     if (count($errors) == 0) {
 
@@ -105,7 +101,6 @@ if(isset($_POST)) {
         $issetname = mysqli_query($db, $sql);
         $issetProduct = mysqli_fetch_all($issetname);
         
-
         // comprobar imagen
         if ($image['name']) {
             // eliminamos la imagen anterior
@@ -121,8 +116,6 @@ if(isset($_POST)) {
 
         } else {
             $nameImagesProducts = $nameImageCurrent;
-            // echo 'Sin imagen';
-            // die();
         }
 
         if ((empty($verifyNameProduct))){

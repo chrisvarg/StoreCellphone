@@ -1,25 +1,11 @@
 <?php require_once('includes/headerPanel.php')?>
-<pre>
-<?php 
-// $customers = clientes($db); 
-// if(! empty($customers)) {
-    
-//     while($customer = mysqli_fetch_assoc($customers)){
-//         var_dump($customer);
-//         echo '<br>';
-//     }
-    
-// }
-// die();
-?>
-</pre>
 <?php require_once('includes/sidebarPanel.php')?>
 
 <div class="session-container">
             <div class="session-text">
                     <h2>Customers</h2>
             </div>
-            
+
             <div class="buttons">
                 <ul class="buttons-container btn-add">
                     <li class="btn">
@@ -40,7 +26,6 @@
                             <th>User</th>
                             <th>Product</th>
                             <th>Full Name</th>
-                            
                             <th>Document</th>
                             <th>Address</th>
                             <th>Contact</th>
@@ -68,12 +53,9 @@
                                 </tr>
                                 <?php endwhile; ?>
                             <?php endif;?>
-
                     </tbody>
                 </table>
-                
             </div>
-
         </div>
     </div>
 </main>

@@ -1,9 +1,4 @@
 <?php require_once('includes/headerPanel.php')?>
-<!-- <pre> -->
-<?php 
-
-?>
-</pre>
 <?php require_once('includes/sidebarPanel.php')?>
 
 <div class="session-container">
@@ -57,7 +52,6 @@
                                 </tr>
                                 <?php endwhile; ?>
                             <?php endif;?>
-
                     </tbody>
                 </table>
                 <div class="buttons button-see">
@@ -67,11 +61,9 @@
                                 <p>See More</p>
                             </a>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
 </main>

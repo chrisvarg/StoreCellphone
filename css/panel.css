@@ -432,7 +432,6 @@ span {
 .form-items input[type="files"],
 .form-items input[type="password"] {
     padding-left: 8px;
-    text-transform: capitalize;
 }
 
 .form-items input[type="file"]{

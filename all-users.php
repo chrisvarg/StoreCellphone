@@ -5,6 +5,7 @@
             <div class="session-text">
                     <h2>Users</h2>                    
             </div>
+            
             <div class="buttons">
                 <ul class="buttons-container btn-add">
                     <li class="btn">
@@ -58,11 +59,9 @@
                                 <p>See More</p>
                             </a>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
 </main>

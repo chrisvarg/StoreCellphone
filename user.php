@@ -1,5 +1,4 @@
 <?php require_once('includes/headerPanel.php'); ?>
-
 <?php 
     $user = $_SESSION['user']; // comprueba el usuario
     userRestrictions($user['position']); // restringe al usuario segun su position
@@ -9,15 +8,13 @@
     // demuestra si el usuario existe 
     $exist = elementExist($db, $_GET['id'], 'usuarios');
 ?>
-
 <?php require_once('includes/sidebarPanel.php'); ?>
-
 
 <div class="session-container">
             <div class="session-text">
                 <?php 
                     if(isset($_SESSION['user'])):?>
-                        <h2><?=$userCurrent['nombre']?></h2>
+                        <h2><?=$userCurrent['nombre']?> <?=$userCurrent['apellidos']?></h2>
                     <?php endif; ?>
             </div>
             
@@ -27,8 +24,8 @@
                     <?php //header("Refresh: 5; URL=element.php?id={$userCurrent['id']}")?>
                 <?php endif; ?>        
             </div>
+
             <div class="element-container">
-                
                 <div class="element-image">
                     <figure >
                         <img class="element-profile" src="./users/<?=$userCurrent['imagen']?>" alt="">
@@ -46,6 +43,7 @@
                     </div>    
                 </div>
             </div>
+
             <div class="buttons buttons-elements">
                 <ul class="buttons-container ">
                     <li class="btn">
@@ -54,7 +52,6 @@
                             <p>Remove</p>
                         </a>
                     </li>
-
                     <li class="btn">
                         <a class="update" href="update-user.php?id=<?=$userCurrent['id']?>">
                             <span class="material-icons-round">add_circle</span>
@@ -63,14 +60,7 @@
                     </li>
                 </ul>
             </div>
-            
         </div>
     </div>
     <?php eraserErrors();?>
 </main>
-
-<pre>
-    <?php //$elements = listelements($db); ?>
-    <?php //var_dump($elements); ?>
-    
-</pre>

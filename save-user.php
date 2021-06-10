@@ -24,7 +24,6 @@ if(isset($_POST)){
     $position = isset($_POST['position']) ? mysqli_escape_string($db, $_POST['position']) : false;
     $email = isset($_POST['email']) ? mysqli_escape_string($db, trim($_POST['email'])) : false;
     $password = isset($_POST['password']) ? mysqli_escape_string($db, $_POST['password']) : false;
-
  
     // ARRAY DE ERRORES
     $errors = [];
@@ -71,13 +70,10 @@ if(isset($_POST)){
         $errors['password'] = "Empty password";
     }
 
-        // VALIDAR CUANTOS ERRORES SE PRESENTARON SINO SUBIR DB
+    // VALIDAR CUANTOS ERRORES SE PRESENTARON SINO SUBIR DB
     $userSave = false;
     if (count($errors) == 0 ) {
-        
-        
         $userSave = true;
-
         
         // CIFRAR LA CONTRASEÑA
             /**
@@ -95,7 +91,6 @@ if(isset($_POST)){
             // Subir los datos a la tabla usuarios db
         $insert = mysqli_query($db, $sql);
         
-
         if ($insert) {
             $_SESSION['complete'] = "Registration Completed";
         } else {
@@ -104,6 +99,5 @@ if(isset($_POST)){
     }else {
         $_SESSION['errors'] = $errors;
     }
-    
 }
 header('Location: add-user.php');

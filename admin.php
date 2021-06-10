@@ -25,19 +25,24 @@
                         <h4><?=$product['nombre']?></h4>
                     </div>
                 </div>
+
                 <div class="prices-container">
                     <div class="prices-tittle">
                         <h2>Total Sale</h2>    
                     </div>
+
                     <div class="session-text price-text">
                         <!-- PRECIO TOTAL DEL ULTIMO CELULAR ADQUIRIDO -->
                         <h4>$ <?=number_format($product['precio'], 0, ',', '.')?></h4>
                     </div>
                 </div>
+
                 <div class="prices-container">
+
                     <div class="prices-tittle">
                         <h2>Users</h2>    
                     </div>
+
                     <div class="session-text price-text">
                         <!-- TOTAL DE USUARIOS REGISTRADOS -->
                         <?php 
@@ -50,9 +55,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </main>
-<?php //require_once('includes/footer.php'); ?>
-

@@ -1,17 +1,7 @@
 <?php require_once('includes/header.php') ?>
 <?php require_once('includes/helpers.php') ?>
 <?php require_once('includes/conexion.php') ?>
-<!-- <pre> -->
-<?php 
 
-// $products = listElements($db, 'productos');
-// if (! empty($products)) {
-//     while ($product = mysqli_fetch_assoc($products)){
-//         var_dump($product);
-//     }
-// }
-// die();
-?>
         <!-- MAIN -->
 <main class="site-content">
     <!-- PORTADA -->
@@ -63,14 +53,12 @@
         <div class="products-container">
             <!-- Unidad products -->
             <?php 
-
                 $products = listElements($db, 'productos');
                 if (! empty($products)):
                     while ($product = mysqli_fetch_assoc($products)):
                         // var_dump($product);
                 ?>
                         <div class="products">
-                            
                             <!-- name phone -->
                             <p class="products-name"><?=$product['nombre']?></p>
                             <!-- image phone -->
@@ -84,7 +72,6 @@
                         </div>
                     <?php endwhile;?>
                 <?php endif;?>
-                
         </div>
     </div>
 </main>
