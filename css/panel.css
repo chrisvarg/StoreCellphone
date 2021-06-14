@@ -312,7 +312,7 @@ span {
 
 .button-see {
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 .see {
@@ -370,9 +370,11 @@ span {
 }
 
 .show-table a {
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-content: center;
+    /* text-decoration: none; */
 }
 
 .show-table figure {
@@ -482,6 +484,7 @@ form .update-description {
 }
 
 .button-container {
+    margin: 0 auto;
     margin-top: 2rem;
 }
 
@@ -660,4 +663,11 @@ form .update-description {
 
 .update-form {
     margin: 0 auto;
+}
+
+.site-footer {
+    height: 2.4rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }

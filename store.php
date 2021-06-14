@@ -1,8 +1,7 @@
-<?php require_once('includes/header.php') ?>
+<?php require_once('includes/header.php');?>
 <?php require_once('includes/helpers.php') ?>
 <?php require_once('includes/conexion.php') ?>
 
-        <!-- MAIN -->
 <main class="site-content">
     <!-- PORTADA -->
     <div class="cover-site">
@@ -12,11 +11,12 @@
             <p class="cover-text__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quasi nesciunt molestiae enim? Atque aperiam cumque cum ab iste amet modi aliquid voluptatibus explicabo molestiae neque, officiis tenetur suscipit dolore.</p>
         </div>
     </div>
-
+    
     <!-- MARKS -->
     <div class="marks-site">
         <!-- Containt of images -->
         <div class="marks-container">
+
             <!-- apple -->
             <figure class="marks-container__items apple">
                 <!-- tamaños de las imagenes segun la resolución de pantalla -->
@@ -26,6 +26,7 @@
                         sizes="(min-width:375px) 375w"
                         src="./assets/img/apple.png" alt="">
             </figure>
+
             <!-- galaxy -->
             <figure class="marks-container__items">
                 <img srcset="./assets/img/galaxy.png 200w,
@@ -33,6 +34,7 @@
                                 ./assets/img/galaxy@3x.png 800w"
                         src="./assets/img/galaxy.png" alt="">
             </figure>
+
             <!-- xiaomi -->
             <figure class="marks-container__items xiaomi">
                 <img srcset="./assets/img/xiaomi.png 200w,
@@ -40,17 +42,18 @@
                                 ./assets/img/xiaomi@3x.png 800w"
                         src="./assets/img/xiaomi.png" alt="">
                 </figure>
+
                 <!-- huawei -->
             <figure class="marks-container__items">
                 <img srcset="./assets/img/huawei.png 200w,
-                                ./assets/img/huawei@2x.png 600w,
-                                ./assets/img/huawei@3x.png 800w"
+                             ./assets/img/huawei@2x.png 600w,
+                             ./assets/img/huawei@3x.png 800w"
                         src="./assets/img/huawei.svg" alt="">
-                </figure>
+            </figure>
         </div>
     </div>
-    <!-- PRODUCTOS SMARTHPHONE -->
     <div class="products-site">
+        <h1>Welcome to Our Store</h1>
         <div class="products-container">
             <!-- Unidad products -->
             <?php 
@@ -77,4 +80,5 @@
         </div>
     </div>
 </main>
-<?php require_once('includes/footer.php') ?>
+
+<?php require_once('includes/footer.php')?>

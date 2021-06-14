@@ -46,18 +46,7 @@
                         <input type="text" name="lastname" autofocus="autofocus" required="required">
                     </div>
 
-                    <!-- Position -->
-                    <div class="form-items">
-                        <label for="position">Position</label><br>
-                        <?php
-                            //mostrar error position 
-                            echo isset($_SESSION['errors']) ? showErrors($_SESSION['errors'], 'position') : '';
-                        ?>
-                        <select name="position" id="">
-                            <option value="employed">Employed</option>
-                            <option value="boss">Boss</option>
-                        </select>
-                    </div>
+                    <input type="hidden" name="position" value="employed">
         
                     <!-- E-MAIL -->
                     <div class="form-items">

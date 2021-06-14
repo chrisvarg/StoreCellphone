@@ -21,10 +21,10 @@ if(isset($_POST)){
      */
     $name = isset($_POST['name']) ? mysqli_escape_string($db, $_POST['name']) : false;
     $lastname = isset($_POST['lastname']) ? mysqli_escape_string($db, $_POST['lastname']) : false;
-    $position = isset($_POST['position']) ? mysqli_escape_string($db, $_POST['position']) : false;
+    // $position = isset($_POST['position']) ? mysqli_escape_string($db, $_POST['position']) : false;
     $email = isset($_POST['email']) ? mysqli_escape_string($db, trim($_POST['email'])) : false;
     $password = isset($_POST['password']) ? mysqli_escape_string($db, $_POST['password']) : false;
-
+    $position = 'employed';
     // ARRAY DE ERRORES
     $errors = [];
     
