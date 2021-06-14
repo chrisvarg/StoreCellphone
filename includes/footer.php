@@ -8,9 +8,9 @@
                     <nav class="nav-menu nav-footer">
                         <ul>
                             <li class="nav-menu_items home"><a href="index.php">Home</a></li>
-                            <li class="nav-menu_items"><a href="">Store</a></li>
-                            <li class="nav-menu_items about2"><a href="">About us</a></li>
-                            <li class="nav-menu_items contact2"><a href="">Contact</a></li>
+                            <li class="nav-menu_items"><a href="store.php">Store</a></li>
+                            <li class="nav-menu_items about2"><a href="about.php">About us</a></li>
+                            <li class="nav-menu_items contact2"><a href="contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -49,9 +49,7 @@
             </div>
             <!-- copyright -->
             <div class="copyright-container footer-sign admin-footer">
-                <figure class="logo logo-footer">
-                    <img src="./assets/img/Logo.png" alt="">
-                </figure>
+                
                 <p class="text-copyright ">
                     Copyright &copy; | Desarrollado por Christian Vargas
                 </p>

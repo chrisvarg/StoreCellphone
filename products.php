@@ -73,3 +73,4 @@
         </div>
     </div>
 </main>
+<?php require_once('includes/footer-admin.php') ?>

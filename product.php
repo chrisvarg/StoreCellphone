@@ -6,7 +6,7 @@
 ?>
 <?php require_once('includes/sidebarPanel.php'); ?>
 
-<div class="session-container">
+    <div class="session-container">
             <div class="session-text">
                 <?php 
                     if(isset($_SESSION['user'])):?>
@@ -63,3 +63,4 @@
     </div>
     <?php eraserErrors();?>
 </main>
+<?php require_once('includes/footer-admin.php') ?>

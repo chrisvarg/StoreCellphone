@@ -69,7 +69,7 @@
                         </div>
                         
                         <div class="button-container">
-                            <div class="buttons button-see">
+                            <div class="">
                                 <input class="button" type="submit" value="Continue">                                
                             </div>
                         </div>
@@ -82,3 +82,4 @@
         </div>
     </div>
 </main>
+<?php require_once('includes/footer-admin.php') ?>

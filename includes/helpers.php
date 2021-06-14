@@ -135,9 +135,15 @@ function elementExist($db, $id, $table){
             case $table == 'productos':
                 return  header('Location: products.php');
                 break;
-            
         }
-        // header('Location: products.php');
+    }
+}
+
+function existeProduct($db, $id, $table){
+    
+    $element = element($db, $id, $table);
+    if (! isset($element['id'])) {
+        return  header('Location: store.php');
     }
 }
 
