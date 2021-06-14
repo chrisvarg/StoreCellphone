@@ -151,23 +151,23 @@ subir el contenido a la región del header */
     width: 90%;
     padding: 0;
     margin: 0 auto;
-    margin-top: 5.6rem;
-    margin-bottom: 5.6rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 
 /* darle tamaños especificos a los contenedores de imagenes */
 .marks-container__items {
-    min-width: 13rem;
-    min-height: 13rem;
+    min-width: 11rem;
+    min-height: 11rem;
     margin: 0 auto;
     margin: 1rem;
 }
 
     /* PRODUCTS */
 .products {
-    width: 22.4rem;
+    width: 19.4rem;
     max-width: 57.4rem;
-    height: 46rem;
+    height: 40rem;
 }
 
 .products .products-name {
@@ -177,15 +177,14 @@ subir el contenido a la región del header */
 }
 
 .products-photo {
-    width: 19.2rem;
-    height: 25.8rem;
+    width: 20rem;
+    height: 20rem;
 }
 
 .products .products-price {
     /* margin-top: 1rem; */
     margin-bottom: 2.5rem;
     font-size: 2rem;
-
 }
 
 .btn-buy {
@@ -193,6 +192,10 @@ subir el contenido a la región del header */
     height: 4.5rem;
     margin-bottom: 3rem;
     font-size: 1.6rem;
+}
+
+.btn-buy a {
+    padding: 1.5rem;
 }
 
 /* FOOTER */
@@ -233,6 +236,26 @@ subir el contenido a la región del header */
     margin-top: 1rem;
 }
 
+/* DETAILS PRODUCTS */
+
+.session-container {
+    width: 80%;
+    max-width: 100%;
+    min-width: 60rem;
+    margin: 0 auto;
+}
+
+.element-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.element-container .element-about {
+    background-color: transparent;
+    width: 100%;
+}
+
 
 /* resolution desktop*/
 
@@ -259,5 +282,17 @@ subir el contenido a la región del header */
     .products-container {
         max-width: 80%;
         margin: 0 auto;
+    }
+
+    .session-container {
+        width: 59%;
+    }
+    
+    .element-text {
+        width: 80%;
+    }
+
+    .element-container .element-about{
+        width: 100%;
     }
 }

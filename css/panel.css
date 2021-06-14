@@ -17,6 +17,8 @@ h2 {
 
 span {
     margin-right: .5rem;
+    font-weight: 300;
+    text-transform: capitalize;
 }
 
 /* HEADER */
@@ -198,11 +200,12 @@ span {
     /*padding-bottom: 5rem; */
     background-color: #0f0f0f;
     border-radius: 3.7rem;
+    /* overflow: scroll; */
 }
 
 .session-text {
     width: 50%;
-    height: 9%;
+    height: 3.7rem;
     margin: 0 auto;
     font-size: 1.5rem;
     background-color: #404040;
@@ -251,6 +254,7 @@ span {
 }
 
 .prices .price-text {
+    text-transform: capitalize;
     width: 85.6%;
     margin: 0;
     margin-top: 1.5rem;
@@ -263,10 +267,12 @@ span {
     width: 40rem;
     margin-top: 4rem;
     margin-left: 5.2rem;
+    margin-bottom: 4rem;
 }
 
 .buttons-container{
     display: flex;
+    justify-content: center;
     list-style: none;
     height: 100%;
 }
@@ -290,6 +296,10 @@ span {
     box-shadow: 0 0 1px rgba(0, 0, 0, .3),0 3px rgba(0, 0, 0, .3), 0 0 1px #404040 inset, 0 -2px 7px rgba(0, 0, 0, .25) inset;
 }
 
+.btn-add {
+    justify-content: flex-start;
+}
+
 .add {
     background-color: #0F811B;
 }
@@ -300,17 +310,24 @@ span {
     background-color: #0c6615;
 }
 
+.button-see {
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.see {
+    justify-content: center;
+}
+
 .remove {
     background-color: #CB1304;
 }
 
 .remove:hover {
     background-color:  #db2b1b;
-
 }
 .remove:active {
     background-color:  #ad1507;
-
 }
 
 .update {
@@ -338,6 +355,7 @@ span {
 .show-table {
     width: 100%;
     font-size: 1.4rem;
+    text-transform: capitalize;
 }
 
 .show-table th {
@@ -352,9 +370,11 @@ span {
 }
 
 .show-table a {
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-content: center;
+    /* text-decoration: none; */
 }
 
 .show-table figure {
@@ -365,4 +385,289 @@ span {
 .show-table img {
     width: 100%;
     height: 100%;
+}
+
+/* FORMULARIOS */
+
+.form-container {
+    width: 40%;
+    margin: 0 auto;
+}
+.form-container h2 {
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-items{
+    margin: 1rem 6.1rem;
+    width: 75%;
+}
+
+.form-items {
+    font-size: 1.6rem;
+}
+
+.form-items input,
+.form-items textarea {
+    color: #eeeeee;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 3.8rem;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color: #404040;
+}
+
+.form-items input[type="text"],
+.form-items input[type="email"],
+.form-items input[type="number"],
+.form-items input[type="files"],
+.form-items input[type="password"] {
+    padding-left: 8px;
+}
+
+.form-items input[type="file"]{
+    border: none;
+    background-color: transparent;
+}
+
+.form-items input:focus {
+    padding-left: 8px;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #707070;
+}
+
+.form-container .update-description{
+    width: 240%;
+}
+
+form .update-description {
+    margin: 1rem 6.1rem;
+}
+
+.form-items textarea {
+    
+    margin-top: .5rem;
+    height: auto;
+    /* width: 300px; */
+    width: 100%;
+}
+
+.sessions-registre {
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+.form-items select {
+    background-color: #404040;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    height: 3.8rem;
+    margin-top: 0.5rem;
+    font-family: "roboto", sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #eeeeee;
+}
+
+.button-container {
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.button {
+    background-color: #21171F;
+    width: 10.2rem;
+    height: 3.1rem;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1.5rem;
+    color: #eeeeee;
+    font-size: 1.6rem;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #222222;
+    border: 0.1rem solid #707070;
+}
+
+.session-container .date {
+    width: 70%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: space-around;
+}
+
+/* MOSTRAR INFORMACIÓN */
+
+.information {
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.information h4 {
+    margin-top: 1.5rem;
+}
+
+.information .email {
+    text-transform: lowercase;
+}
+
+.information p {
+    margin-bottom: 1.5rem;
+}
+
+.dates {
+    margin-left: 2rem;
+}
+
+/* ALERTS */
+
+.alert {
+    color: #ff7b72;
+    font-size: 1.4rem;
+    padding-top: .2rem;
+    padding-left: .5rem;
+    margin-top: .4rem;
+    border-radius: .5rem;
+    height: auto;
+    /* width: 75%; */
+}
+.alert-error {
+    margin: 0 auto;
+    background-color: #521c18;
+    height: 2rem;
+}
+
+.alert-complete {
+    color: #2f9646;
+    background-color: #0b1f14;
+    width: 75%;
+    height: 4rem;
+    padding-top: 1.2rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.alert-save {
+    color: #ff7b72;
+    background-color: #521c18;
+}
+
+.alert-update {
+    height: auto;
+    width: 40.5%;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+
+/* mostrar los elementos bases de datos */
+.element-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3rem;
+    margin-top: 0rem;
+    margin-bottom: 0;
+}
+
+.element-user {
+    margin-top: 3rem;
+}
+
+.element-image {
+    /* margin-top: 3rem; */
+    padding: 1.6rem;
+    padding-right: 0;
+}
+
+.element-image figure{
+    width: 25rem;
+    height: 25rem;
+}
+
+.element-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.element-image .image-customer {
+    color: #b9b8b8;
+    font-size: 25rem
+}
+
+.element-container .element-text {
+    width: 60%;
+    max-width: 50rem;
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.element-container  .element-text__date {
+    padding: 1rem;
+    margin-left: 0rem;
+    width: 100%;
+    height: auto;
+}
+.element-container  .element-text__date p {
+    width: 100%;
+    /* height: 10rem; */
+    padding: 3px;
+    margin-bottom: 0; 
+}
+
+.element-profile {
+    /* background-color: brown; */
+    border: 1px solid #404040;
+    border-radius: 50%;
+}
+
+.buttons-elements {
+    margin: 0 auto;
+}
+
+/* ACTUALIZAR  */
+
+.update-tittle {
+    margin: 7rem 2rem 3rem;
+    text-align: center;
+}
+
+.product-update {
+    align-items:flex-start;
+}
+
+.update-image {
+    margin-top: 3rem;
+}
+
+.update-form {
+    margin: 0 auto;
+}
+
+.site-footer {
+    height: 2.4rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }

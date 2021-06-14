@@ -15,16 +15,17 @@
             <div class="text-container text-signup">
                 <h1>Sign Up</h1>
             </div>
+
             <!-- FORMULARY -->
-            
             <div class="form-container">
 
                 <form action="registre.php" method="POST">
                 <?php if(isset($_SESSION['complete'])) :
                     echo "<div class='alert alert-complete'> {$_SESSION['complete']}</div>"; ?>
                 <?php elseif (isset($_SESSION['errors']['general'])) :
-                    echo "<div class='alert alert-complete'>{$_SESSION['errors']['general']}</div>";?>
+                    echo "<div class='alert alert-complete alert-save'>{$_SESSION['errors']['general']}</div>";?>
                 <?php endif; ?>
+
                     <!-- NAME -->
                     <div class="form-items">
                         <label for="nombre">Name</label> <br/>
@@ -34,6 +35,7 @@
                         ?>
                         <input type="text" name="name" autofocus="autofocus" required="required"> <br/>
                     </div>
+
                     <!-- LAST NAME -->
                     <div class="form-items">
                         <label for="apellidos" >Last Name</label><br>
@@ -43,6 +45,7 @@
                         ?>
                         <input type="text" name="lastname" autofocus="autofocus" required="required">
                     </div>
+
                     <!-- Position -->
                     <div class="form-items">
                         <label for="position">Position</label><br>
@@ -79,9 +82,9 @@
                     <div class="sessions sessions-registre">
                         <input class="btn" type="submit" value="Continue">
                     </div>
-                    
                 </form>
                 <?php eraserErrors();?>
+
             </div>
         </div>
     </main>

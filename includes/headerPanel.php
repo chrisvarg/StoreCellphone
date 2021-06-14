@@ -1,12 +1,7 @@
 <?php require_once('includes/conexion.php'); ?>
 <?php require_once('includes/helpers.php'); ?>
 
-<?php 
-if (! isset($_SESSION['user'])){
-    header('Location: index.php');
-    exit();    
-}
-?>
+<?php redirect();?>
 
 <!DOCTYPE html>
 <html lang="en">
