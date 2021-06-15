@@ -489,7 +489,7 @@ form .update-description {
 }
 
 .button {
-    background-color: #21171F;
+    background-color: #03489c;
     width: 10.2rem;
     height: 3.1rem;
     margin: 0 auto;
@@ -670,4 +670,9 @@ form .update-description {
     text-align: center;
     font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
+}
+
+.menu-footer, 
+.sessions, .follows {
+    display: none;
 }

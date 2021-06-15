@@ -52,17 +52,8 @@
                     </tbody>
                 </table>
 
-                <div class="buttons button-see">
-                    <ul class="buttons-container see">
-                        <li class="btn">
-                            <a class="add" href="all-users.php">
-                                <p>See More</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
 </main>
-<?php require_once('includes/footer-admin.php') ?>
+<?php require_once('includes/footer.php') ?>

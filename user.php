@@ -64,4 +64,4 @@
     </div>
     <?php eraserErrors();?>
 </main>
-<?php require_once('includes/footer-admin.php') ?>
+<?php require_once('includes/footer.php') ?>
