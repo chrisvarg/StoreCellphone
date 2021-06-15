@@ -1,15 +1,11 @@
-<?php require_once('includes/headerPanel.php'); ?>
-<?php 
-    $userCurrent = $_SESSION['user'];
-    userRestrictions($userCurrent['position']);
-?>
+<?php require_once('includes/headerPanel.php')?>
 <?php require_once('includes/sidebarPanel.php')?>
 
 <div class="session-container">
             <div class="session-text">
                     <h2>Users</h2>                    
             </div>
-
+            
             <div class="buttons">
                 <ul class="buttons-container btn-add">
                     <li class="btn">
@@ -36,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php  $users = listElements($db, 'usuarios', true);
+                        <?php  $users = listElements($db, 'usuarios');
                             if (!empty($users)):
                                 while($user = mysqli_fetch_assoc($users)):
                         ?>
@@ -56,15 +52,6 @@
                     </tbody>
                 </table>
 
-                <div class="buttons button-see">
-                    <ul class="buttons-container see">
-                        <li class="btn">
-                            <a class="add" href="all-users.php">
-                                <p>See More</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>

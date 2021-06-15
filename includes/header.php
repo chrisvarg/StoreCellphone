@@ -10,6 +10,7 @@
         <link rel="icon" type="image/png" href="/assets/img/Logo.png">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/tablet.css" media="screen and (min-width:600px)">
+        <link rel="stylesheet" href="./css/form.css">
             <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
@@ -36,9 +37,9 @@
                         <nav class="nav-menu">
                             <ul>
                                 <li class="nav-menu_items home"><a href="index.php">Home</a></li>
-                                <li class="nav-menu_items"><a href="">Store</a></li>
-                                <li class="nav-menu_items about"><a href="">About us</a></li>
-                                <li class="nav-menu_items contact"><a href="">Contact</a></li>
+                                <li class="nav-menu_items"><a href="store.php">Store</a></li>
+                                <li class="nav-menu_items about"><a href="about.php">About us</a></li>
+                                <li class="nav-menu_items contact"><a href="contact.php">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

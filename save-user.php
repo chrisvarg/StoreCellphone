@@ -21,13 +21,13 @@ if(isset($_POST)){
      */
     $name = isset($_POST['name']) ? mysqli_escape_string($db, $_POST['name']) : false;
     $lastname = isset($_POST['lastname']) ? mysqli_escape_string($db, $_POST['lastname']) : false;
-    // $position = isset($_POST['position']) ? mysqli_escape_string($db, $_POST['position']) : false;
+    $position = isset($_POST['position']) ? mysqli_escape_string($db, $_POST['position']) : false;
     $email = isset($_POST['email']) ? mysqli_escape_string($db, trim($_POST['email'])) : false;
     $password = isset($_POST['password']) ? mysqli_escape_string($db, $_POST['password']) : false;
-    $position = 'employed';
+ 
     // ARRAY DE ERRORES
     $errors = [];
-    
+
     // VERIFICAR LOS DATOS QUE LLEGAN
 
         // validación nombre
@@ -62,7 +62,7 @@ if(isset($_POST)){
         $errors['email'] = "Invalid email";
     }
 
-       // validación password
+        // validación password
     if (! empty($password)) {
         $validPassword = true;
     } else {
@@ -74,7 +74,7 @@ if(isset($_POST)){
     $userSave = false;
     if (count($errors) == 0 ) {
         $userSave = true;
-
+        
         // CIFRAR LA CONTRASEÑA
             /**
              * Las contraseñas se deben cifrar ya que se guardarian
@@ -84,20 +84,20 @@ if(isset($_POST)){
         $securepassword = password_hash($password,PASSWORD_BCRYPT, ['cost=>4 ']);
 
         // INSERTAR EL USUARIO A LA BASE DE DATOS
-            // consulta para subir los datos
+        // consulta para subir los datos
         $sql = "INSERT INTO usuarios 
                 VALUES(null, '{$name}', '{$lastname}', '{$position}', '{$email}', '{$securepassword}', NULL, CURDATE())";
+            
             // Subir los datos a la tabla usuarios db
         $insert = mysqli_query($db, $sql);
-
+        
         if ($insert) {
-            $_SESSION['complete'] = "Registration completed";
+            $_SESSION['complete'] = "Registration Completed";
         } else {
             $_SESSION['errors']['general'] = "Save Failed";
         }
-
-    } else {
+    }else {
         $_SESSION['errors'] = $errors;
     }
 }
-header('Location: signUp.php');
+header('Location: add-user.php');

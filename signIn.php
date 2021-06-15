@@ -13,11 +13,11 @@
         <div class="text-container">
             <h1>Sign In</h1>
         </div>
-        <!-- FORMULARY -->
 
+        <!-- FORMULARY -->
         <?php if(isset($_SESSION['error-login'])):  ?>
             <!-- error si no hay sessión user -->
-            <div class="alert alert-error">
+            <div class="alert alert-complete alert-save">
                 <?=$_SESSION['error-login']; ?>
             </div>
         <?php endif; ?>

@@ -19,7 +19,9 @@ function dbConexion()
 }
 
 $db = dbConexion();
-
 mysqli_query($db, 'SET NAMES utf8');
 
-session_start();
+ // INICIO DE SECCIÓN
+if(isset($_SESSION) == false){
+    session_start();
+}
