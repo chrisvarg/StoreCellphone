@@ -5,7 +5,7 @@
             <div class="session-text">
                     <h2>Customers</h2>
             </div>
-            
+
             <div class="buttons">
                 <ul class="buttons-container btn-add">
                     <li class="btn">
@@ -14,16 +14,20 @@
                             <p>Add</p>
                         </a>
                     </li>
+
                 </ul>
             </div>
             
             <div class="table-container">
+
                 <h2>Lastest Customers</h2>
+
                 <table class="show-table" >
                     <thead>
                         <tr>
                             <th></th>
                             <th>ID</th>
+
                             <th>Full Name</th>
                             <th>Product</th>
                             <th>Document</th>

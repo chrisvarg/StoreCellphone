@@ -484,6 +484,7 @@ form .update-description {
 }
 
 .button-container {
+    width: 27%;
     margin: 0 auto;
     margin-top: 2rem;
 }
